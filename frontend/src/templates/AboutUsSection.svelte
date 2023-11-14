@@ -1,6 +1,6 @@
 <script>
-  import Title from "../components/title.svelte";
-  import Description from "../components/description.svelte";
+  import Title from "../components/Title.svelte";
+  import Description from "../components/Description.svelte";
 </script>
 
 <section>
@@ -14,7 +14,6 @@
 </section>
 
 <style>
-
   section {
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,6 +26,4 @@
     align-items: center;
     padding: 2rem;
   }
-
-
 </style>

@@ -1,114 +1,115 @@
-
 <script>
-    import Button from "../components/Button.svelte";
-    import { onMount } from "svelte";
-    import apiDisplay from "../api/displayfavitem.js";
-    import apiUpdateLikes from "../api/updateLikes.js";
-    import apiUpdateDislikes from "../api/updateDislikes.js";
-    import Title from "../components/title.svelte";
-    import SubTitle from "../components/Subtitle.svelte";
-  
-    let cards = [
-      {
-        username: "Loading..",
-        game_name: "Loading..",
-        tool_name: "Loading..",
-        likes: 0,
-        dislikes: 0,
-      },
-    ];
-  
-    async function like(id, likes) {
-      await apiUpdateLikes(id, likes);
-      location.reload();
-    }
-  
-    async function dislike(id, likes) {
-      await apiUpdateDislikes(id, likes);
-      location.reload();
-    }
-  
-    async function getCards() {
-      cards = await apiDisplay();
-    }
-  
-    onMount(() => {
-      getCards();
-    });
-  </script>
-  
-  <section>
-    {#await cards}
-      <SubTitle>Loading...</SubTitle>
-    {:then cards}
-      {#each cards as card}
-        <div class="card">
-          <div class="content">
-            <i class="bx bx-user" />
-            <div class="names">
-              <SubTitle>{card.username}</SubTitle>
-              <p>{card.game_name}</p>
-              <p>{card.tool_name}</p>
-            </div>
-          </div>
+  import Button from "../components/Button.svelte";
+  import { onMount } from "svelte";
+  import apiDisplay from "../api/displayfavitem.js";
+  import apiUpdateLikes from "../api/updateLikes.js";
+  import apiUpdateDislikes from "../api/updateDislikes.js";
+  import Title from "../components/Title.svelte";
+  import SubTitle from "../components/SubTitle.svelte";
 
-          <div class="buttons-container">
-            <Button type="secondary more-width" onClick={() => like(card.id, card.likes + 1)}
-              >{card.likes} Like</Button>
-              <Button
-                type="secondary more-width"
-                onClick={() => dislike(card.id, card.likes + 1)}>{card.dislikes} Dislike</Button>
-          </div>
+  let cards = [
+    {
+      username: "Loading..",
+      game_name: "Loading..",
+      tool_name: "Loading..",
+      likes: 0,
+      dislikes: 0,
+    },
+  ];
 
+  async function like(id, likes) {
+    await apiUpdateLikes(id, likes);
+    location.reload();
+  }
+
+  async function dislike(id, likes) {
+    await apiUpdateDislikes(id, likes);
+    location.reload();
+  }
+
+  async function getCards() {
+    cards = await apiDisplay();
+  }
+
+  onMount(() => {
+    getCards();
+  });
+</script>
+
+<section>
+  {#await cards}
+    <SubTitle>Loading...</SubTitle>
+  {:then cards}
+    {#each cards as card}
+      <div class="card">
+        <div class="content">
+          <i class="bx bx-user" />
+          <div class="names">
+            <SubTitle>{card.username}</SubTitle>
+            <p>{card.game_name}</p>
+            <p>{card.tool_name}</p>
+          </div>
         </div>
-      {/each}
-    {/await}
-  </section>
-  
-  <style>
-    .buttons-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    div { 
-      color: white;
-    }
 
-    section {
-      color: white;
-      background: linear-gradient(#d10ed125, #4aaef121) padding-box;
-      padding-left: 3rem;
-      padding-top: 2rem;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.3rem;
-      width: 100%;
-    }
-  
-    .content {
-      display: flex;
-      align-items: center;
-      color: white;
-    }
-  
-    .card {
-      background: linear-gradient(20deg, rgba(209, 14, 209, 0.171), #4aaef14b)
-        padding-box;
-      border-radius: 15px;
-      padding: 1rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    i {
-      color: white;
-      font-size: 50px;
-      padding-right: 15px;
-    }
-  
-  </style>
-  
+        <div class="buttons-container">
+          <Button
+            type="secondary more-width"
+            onClick={() => like(card.id, card.likes + 1)}
+            >{card.likes} Like</Button
+          >
+          <Button
+            type="secondary more-width"
+            onClick={() => dislike(card.id, card.likes + 1)}
+            >{card.dislikes} Dislike</Button
+          >
+        </div>
+      </div>
+    {/each}
+  {/await}
+</section>
+
+<style>
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  div {
+    color: white;
+  }
+
+  section {
+    color: white;
+    background: linear-gradient(#d10ed125, #4aaef121) padding-box;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .card {
+    background: linear-gradient(20deg, rgba(209, 14, 209, 0.171), #4aaef14b)
+      padding-box;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  i {
+    color: white;
+    font-size: 50px;
+    padding-right: 15px;
+  }
+</style>

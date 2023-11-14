@@ -1,8 +1,7 @@
 <script>
-  import Button from "../components/button.svelte";
-  import Title from "../components/title.svelte";
-  import Description from "../components/description.svelte";
-  
+  import Button from "../components/Button.svelte";
+  import Title from "../components/Title.svelte";
+  import Description from "../components/Description.svelte";
 </script>
 
 <section>
@@ -17,15 +16,14 @@
       ARVGlass and unlock limitless adventures.
     </Description>
     <div class="button-container">
-      <Button >Pre-order Now!</Button>
+      <Button>Pre-order Now!</Button>
     </div>
   </div>
 </section>
 
-
 <style>
-   section {
-    background: linear-gradient(160deg,  #d10ed133,#4aaef123) padding-box;
+  section {
+    background: linear-gradient(160deg, #d10ed133, #4aaef123) padding-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,14 +39,12 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     max-width: 100%;
-
   }
 
   .button-container {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    
   }
 
   @media (max-width: 1204px) {

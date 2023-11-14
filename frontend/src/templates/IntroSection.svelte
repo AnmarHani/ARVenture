@@ -1,7 +1,7 @@
 <script>
-  import SubTitle from "../components/Subtitle.svelte";
-  import Description from "../components/description.svelte";
-  import Title from "../components/title.svelte";
+  import SubTitle from "../components/SubTitle.svelte";
+  import Description from "../components/Description.svelte";
+  import Title from "../components/Title.svelte";
 </script>
 
 <section>
@@ -31,20 +31,19 @@
   }
 
   video {
-    width: 100%; 
-    max-width: 40rem; 
+    width: 100%;
+    max-width: 40rem;
     border-radius: 25px;
-    margin-top: 1rem; 
+    margin-top: 1rem;
   }
 
   @media (max-width: 1204px) {
     section {
-    flex-direction: column;
-  }
+      flex-direction: column;
+    }
 
     video {
-      margin-top: 0.5rem; 
+      margin-top: 0.5rem;
     }
   }
-  
 </style>

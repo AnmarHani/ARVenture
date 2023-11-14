@@ -1,6 +1,6 @@
 <script>
-  import Button from "../components/button.svelte";
-  import Title from "../components/title.svelte"; 
+  import Button from "../components/Button.svelte";
+  import Title from "../components/Title.svelte";
   import SubTitle from "../components/SubTitle.svelte";
 </script>
 
@@ -24,7 +24,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   div {
     display: flex;
     justify-content: center;
