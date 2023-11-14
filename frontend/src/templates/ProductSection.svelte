@@ -6,7 +6,6 @@
 </script>
 
 <section>
-  /
   <div class="card-container">
     <div class="content-text">
       <Title>ARVglasses</Title>
@@ -18,11 +17,11 @@
     </div>
     <div class="product-card">
       <div class="logo-cart">
-        <img class="glasses" src="./Logo.png" alt="" />
+        <img class="glasses" src="/Logo.png" alt="" />
         <i class="bx bx-shopping-bag" />
       </div>
       <div class="main-img">
-        <img src="./glassesremoved.png" alt="" />
+        <img src="/glassesremoved.png" alt="" />
       </div>
       <div class="glasses-details">
         <span class="glasses-name">ARVglasses</span>
@@ -64,11 +63,11 @@
   section {
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("./plainpurple2.png");
+    background-image: url("/plainpurple2.png");
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1rem;
+    margin: 2rem auto;
   }
 
   .content-text {

@@ -1,4 +1,5 @@
 <script>
+  import { goto } from '$app/navigation';
   import AddTool from "../api/addfavitem.js";
   import Button from "../components/Button.svelte";
   import Title from "../components/Title.svelte";
@@ -9,7 +10,7 @@
 
   async function createTool() {
     await AddTool(localStorage.getItem("user_id"), tool_name, game_name);
-    window.location.href = "/tools";
+    goto('/tools')
   }
 </script>
 
@@ -39,7 +40,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    background-image: url("./smartglasses.png");
+    background-image: url("/smartglasses.png");
     height: 100vh;
     display: flex;
     justify-content: center;

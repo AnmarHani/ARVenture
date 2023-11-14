@@ -16,7 +16,7 @@
   </div>
 
   <video autoplay loop muted>
-    <source src="./Table.mp4" type="video/mp4" />
+    <source src="/Table.mp4" type="video/mp4" />
   </video>
 </section>
 

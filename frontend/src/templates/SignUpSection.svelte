@@ -1,4 +1,6 @@
 <script>
+  import { goto } from '$app/navigation';
+
   import apiRegister from "../api/register.js";
   import Button from "../components/Button.svelte";
   import Link from "../components/Link.svelte";
@@ -14,7 +16,7 @@
 
   async function register() {
     result = await apiRegister(username, email, password, country);
-    window.location.href = "/sign-in";
+    goto("/sign-in")
   }
 </script>
 
@@ -84,7 +86,7 @@
     min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("./plainpurple.png");
+    background-image: url("/plainpurple.png");
     padding-top: 100px;
     padding-bottom: 400px;
   }

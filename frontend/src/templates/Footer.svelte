@@ -2,7 +2,6 @@
 </script>
 
 <footer>
-  <p>ARVenture &copy; 2023</p>
   <div class="contact">
     <h1>Contact us</h1>
     <div class="icons">
@@ -10,6 +9,8 @@
       <a href="#"><i class="bx bxl-twitter" /></a>
     </div>
   </div>
+  <p>ARVenture &copy; 2023</p>
+
 </footer>
 
 <style>
@@ -24,7 +25,7 @@
     background: linear-gradient(90deg, #d10ed19a, #4aaef19a) padding-box;
   }
 
-  li,
+
   a {
     color: #ffffff;
     font-size: 15px;
@@ -44,59 +45,11 @@
     transform: scale(1.2);
   }
 
-  li:hover {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 720px) {
-    .container {
-      padding-top: 20px;
-      padding-bottom: 10px;
-    }
-
-    .content {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    h1 {
-      font-size: 25px;
-    }
-
-    li,
-    a {
-      font-size: 16px;
-    }
-
-    .icons i {
-      font-size: 25px;
-      margin: 10px 0px 9px 25px;
+  @media (max-width: 500px) {
+    footer {
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 
-  @media (ma-width: 520px) {
-    .container {
-      padding-top: 10px;
-      padding-bottom: 5px;
-    }
-
-    .content {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
-    h1 {
-      font-size: 15px;
-    }
-
-    li,
-    a {
-      font-size: 10px;
-    }
-
-    .icons i {
-      font-size: 10px;
-      margin: 10px 0px 9px 25px;
-    }
-  }
 </style>

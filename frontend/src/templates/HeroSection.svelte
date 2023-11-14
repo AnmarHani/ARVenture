@@ -17,7 +17,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    background-image: url("./herobackground.jpg");
+    background-image: url("/herobackground.jpg");
     height: 80vh;
     display: flex;
     justify-content: center;

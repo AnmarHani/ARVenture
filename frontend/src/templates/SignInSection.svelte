@@ -1,4 +1,6 @@
 <script>
+  import { goto } from '$app/navigation';
+
   import apiLogin from "../api/login.js";
   import Button from "../components/Button.svelte";
   import InputWithIcon from "../components/InputWithIcon.svelte";
@@ -12,7 +14,9 @@
     console.log(username, password);
     result = await apiLogin(username, password);
     localStorage.setItem("user_id", result);
-    window.location.href = "/create-tool";
+    goto("/create-tool")
+    location.reload();
+
   }
 </script>
 
@@ -51,7 +55,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    background-image: url("./plainpurple.png");
+    background-image: url("/plainpurple.png");
     padding-top: 100px;
     padding-bottom: 400px;
   }

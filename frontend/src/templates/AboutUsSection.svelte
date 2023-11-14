@@ -18,8 +18,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    background-image: url("./plainpurple.png");
-    height: 60vh;
+    background-image: url("/plainpurple.png");
+    height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;

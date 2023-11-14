@@ -11,12 +11,12 @@
   import HookSection from "../templates/HookSection.svelte";
 </script>
 
-<main>
-  <HeroSection />
-  <IntroSection />
-  <ShowSection />
-  <HookSection />
-</main>
+
+<HeroSection />
+<IntroSection />
+<ShowSection />
+<HookSection />
+
 
 <style>
 
