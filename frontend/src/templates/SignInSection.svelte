@@ -14,7 +14,7 @@
     console.log(username, password);
     result = await apiLogin(username, password);
     localStorage.setItem("user_id", result);
-    goto("/create-tool")
+    goto("/")
     
 
   }

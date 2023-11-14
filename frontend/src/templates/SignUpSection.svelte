@@ -16,7 +16,7 @@
 
   async function register() {
     result = await apiRegister(username, email, password, country);
-    goto("/sign-in")
+    goto("/")
   }
 </script>
 
