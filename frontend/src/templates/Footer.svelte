@@ -1,23 +1,13 @@
 <script>
-  import Link from "../components/Link.svelte";
-  import Title from "../components/Title.svelte";
-  import SubTitle from "../components/SubTitle.svelte";
 </script>
 
 <footer>
-  <div class="services">
-    <SubTitle>Services</SubTitle>
-    <Link id="tool" type="secondary" linkTo="/create-tool">Create Tool</Link>
-    <Link type="secondary" linkTo="/tools">View all Tools</Link>
-  </div>
-
+  <p>ARVenture &copy; 2023</p>
   <div class="contact">
-    <SubTitle>Contact us</SubTitle>
+    <h1>Contact us</h1>
     <div class="icons">
       <a href="#"><i class="bx bxl-linkedin" /></a>
       <a href="#"><i class="bx bxl-twitter" /></a>
-      <a href="#"><i class="bx bxl-instagram" /></a>
-      <a href="#"> <i class="bx bxl-facebook" /></a>
     </div>
   </div>
 </footer>
