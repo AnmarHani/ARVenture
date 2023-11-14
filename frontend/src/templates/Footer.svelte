@@ -1,6 +1,6 @@
 <script>
   import Link from "../components/Link.svelte";
-  import Title from "../components/title.svelte";
+  import Title from "../components/Title.svelte";
   import SubTitle from "../components/Subtitle.svelte";
 </script>
 
