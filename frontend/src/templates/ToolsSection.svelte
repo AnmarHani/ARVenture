@@ -19,12 +19,10 @@
 
   async function like(id, likes) {
     await apiUpdateLikes(id, likes);
-    location.reload();
   }
 
   async function dislike(id, likes) {
     await apiUpdateDislikes(id, likes);
-    location.reload();
   }
 
   async function getCards() {

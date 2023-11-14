@@ -15,7 +15,7 @@
     result = await apiLogin(username, password);
     localStorage.setItem("user_id", result);
     goto("/create-tool")
-    location.reload();
+    
 
   }
 </script>

@@ -12,7 +12,7 @@
   function deleteUser() {
     localStorage.clear();
     goto("/");
-    location.reload();
+
   }
 </script>
 
