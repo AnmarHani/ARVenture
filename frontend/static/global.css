@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Press+Start+2P&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+}
+
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+
+button {
+    padding: 1.3rem 3rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+a {
+    padding: 0.9rem 2.3rem;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+h1 {
+    text-align: center;
+    color: #ffff;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+ ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background: linear-gradient(45deg,  #d10ed19a,#4aaef19a) padding-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(45deg,  rgba(117, 10, 117, 0.604),#22506e9a) padding-box;
+  } 
