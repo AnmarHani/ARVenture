@@ -10,7 +10,9 @@
 
   async function createTool() {
     await AddTool(localStorage.getItem("user_id"), tool_name, game_name);
-    goto('/tools')
+    goto('/')
+    alert("Please Refresh Page and go to favourite Tools")
+
   }
 </script>
 

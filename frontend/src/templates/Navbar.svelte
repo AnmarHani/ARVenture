@@ -12,6 +12,8 @@
   function deleteUser() {
     localStorage.clear();
     goto("/");
+    alert("Please Refresh Page")
+
 
   }
 </script>

@@ -1,4 +1,6 @@
 <script>
+  import { goto } from '$app/navigation';
+
   import Button from "../components/Button.svelte";
   import { onMount } from "svelte";
   import apiDisplay from "../api/displayfavitem.js";
@@ -19,10 +21,15 @@
 
   async function like(id, likes) {
     await apiUpdateLikes(id, likes);
+    goto("/")
+    alert("Please Refresh Page")
   }
-
+  
   async function dislike(id, likes) {
     await apiUpdateDislikes(id, likes);
+    goto("/")
+    alert("Please Refresh Page")
+
   }
 
   async function getCards() {
@@ -79,8 +86,6 @@
   section {
     color: white;
     background: linear-gradient(#d10ed125, #4aaef121) padding-box;
-    padding-left: 3rem;
-    padding-top: 2rem;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -93,6 +98,7 @@
     display: flex;
     align-items: center;
     color: white;
+    width: fit-content;
   }
 
   .card {
@@ -103,6 +109,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: fit-content;
+    height: fit-content;
+    margin: 2rem 0;
   }
 
   i {

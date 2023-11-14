@@ -42,8 +42,8 @@
     }
 	
 	.more-width {
-		width: 15rem;
-		height: 5rem;
+		width: 6rem;
+		font-size: 0.5rem;
 	}
 
     .full-width{
