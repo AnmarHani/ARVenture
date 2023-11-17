@@ -1,0 +1,46 @@
+site_name: ARVenture Project Documents
+theme:
+  name: material
+  logo: assets/Logo.png
+  font:
+    code: Roboto Mono
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: cyan
+      accent: purple
+
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.path
+plugins:
+  - search
+
+nav:
+  - ARVenture:
+    - Home: index.md 
+  - "Project Management Phases":
+    - Initiation Phase: "project-management/initiation.md"
+    - Planning Phase: "project-management/planning.md"
+    - Execution Phase: "execution/index.md"
+    - Controlling Phase: "index.md"
+    - Closing Phase: "index.md"
+  - "Execution Phases (Software Process Activities)":
+    - Home: execution/index.md
+    - Requirements Specification Activity: execution/specification.md
+    - Development Phase:
+      - Design Activity: execution/design.md
+      - Implementation Activity: execution/implementation.md
+    - Testing (V&V) Activity:
+      - Validation:
+        - Functional: index.md
+        - Non Functional: index.md
+      - Verification: index.md
+    - Evolution Activity:
+      - Home: index.md
