@@ -10,11 +10,11 @@ Also, Github Repository [ARVenture Github Repo]()
 
 ## Credits
 
-Anmar Hani (2140004) - Team Lead, Software Architect, Test Designer, and Project Manger.
-Mohamad Alsaadwi (2140519) - Web Frontend Developer.
-Raef Shah (2141165) - Fullstack Designer.
-Yaser Kaid (2140847) - Mobile Developer.
-Ziyad Alghamdi (2142017) - Backend Developer and Data Analyst.
+- Anmar Hani (2140004) | Team Lead, Software Architect, Test Designer, and Project Manger.
+- Mohamad Alsaadwi (2140519) | Web Frontend Developer.
+- Raef Shah (2141165) | Fullstack Designer.
+- Yaser Kaid (2140847) | Mobile Developer.
+- Ziyad Alghamdi (2142017) | Backend Developer and Data Analyst.
 
 <!-- Fawaz Khosifan - System Admin and Penetration Tester -->
 
