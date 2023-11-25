@@ -1,6 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
-  import AddTool from "../api/addfavitem.js";
+  import AddTool from "../api/create-item.js";
   import Button from "../components/Button.svelte";
   import Title from "../components/Title.svelte";
   import LabelWithInput from "../components/LabelWithInput.svelte";

@@ -3,9 +3,9 @@
 
   import Button from "../components/Button.svelte";
   import { onMount } from "svelte";
-  import apiDisplay from "../api/displayfavitem.js";
-  import apiUpdateLikes from "../api/updateLikes.js";
-  import apiUpdateDislikes from "../api/updateDislikes.js";
+  import getAllItemsAPI from "../api/get-all-items.js";
+  import likeItemAPI from "../api/like-item.js";
+  import dislikeItemAPI from "../api/dislike-item.js";
   import Title from "../components/Title.svelte";
   import SubTitle from "../components/SubTitle.svelte";
 
@@ -20,20 +20,20 @@
   ];
 
   async function like(id, likes) {
-    await apiUpdateLikes(id, likes);
+    await likeItemAPI(id, likes);
     goto("/")
     alert("Please Refresh Page")
   }
   
   async function dislike(id, likes) {
-    await apiUpdateDislikes(id, likes);
+    await dislikeItemAPI(id, likes);
     goto("/")
     alert("Please Refresh Page")
 
   }
 
   async function getCards() {
-    cards = await apiDisplay();
+    cards = await getAllItemsAPI();
   }
 
   onMount(() => {
