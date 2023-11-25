@@ -5,12 +5,10 @@ from datetime import datetime, timedelta
 from passlib.hash import pbkdf2_sha256
 import mysql.connector
 from mysql.connector.cursor_cext import CMySQLCursor
-from typing import Optional
 import time
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 import validation
-import logging
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 app = FastAPI()
 if __name__ == "__main__":
@@ -45,7 +43,17 @@ while True:
 
 
 
-
+def get_current_user_id(token: str = Depends(oauth2_scheme)):
+    credentials_exception = HTTPException(
+        status_code=401,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload.get("sub")
+    except JWTError:
+        raise credentials_exception
 
 
 @app.get("/fill-db")
@@ -94,8 +102,8 @@ SECRET_KEY = "245"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-def create_access_token(*, user_id: int, username: str):
-    to_encode = {"id": str(user_id), "username": username}
+def create_access_token(*, data: dict):
+    to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
@@ -104,60 +112,39 @@ def create_access_token(*, user_id: int, username: str):
 @app.post("/user/login")
 def login_user(user: validation.Login):
     try:
-        query = "SELECT password, id, username FROM users WHERE username = %s"
+        query = "SELECT password, id FROM users WHERE username = %s"
         cursor.execute(query, (user.username,))
         result = cursor.fetchone()
 
         if result is None:
             return {"message": "User not found"}
 
-        stored_password_hash, user_id, username = result  
+        stored_password_hash, user_id = result  
 
         if pbkdf2_sha256.verify(user.password, stored_password_hash):
-            access_token = create_access_token(user_id=user_id, username=username)
-            return {
-                "access_token": access_token,
-                "id": str(user_id),
-               
-                "token_type": "bearer",
-                "message": "Login successful"
-            }
+            access_token = create_access_token(data={"sub": user_id})
+            return {"access_token": access_token, "user_id": user_id, "token_type": "bearer", "message": "Login successful"}
         else:
             return {"message": "Invalid password"}
     except mysql.connector.Error as error:
         return {"message": "User login failed", "error": str(error)}
 
-async def get_current_user(token: str = Header(None)):
-    if token is None:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid credentials",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-    credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        user_id = payload.get("id")
-        username = payload.get("username")
-        if user_id is None or username is None:
-            raise credentials_exception
-        return {"id": user_id, "username": username}
-    except JWTError:
-        raise credentials_exception
-
-
-
-
-
-
-
-
     
+@app.post("/user/admin/{user_id}")
+def if_admin(user_id: int):
+    try:
+        
+        query = "SELECT user_id FROM admin WHERE user_id = %s"
+        cursor.execute(query, (user_id,))
+        result = cursor.fetchone()
 
+        
+        is_admin = result is not None
+
+        return {"is_admin": is_admin}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/items")
@@ -188,15 +175,10 @@ def get_all_items():
         return {"message": "Failed to retrieve items", "error": str(error)}
 
 
-    
 
-@app.post("/items/create")
-def create_item_by_token(
-    request_body: validation.FavouriteGameTool,
-    current_user: dict = Depends(get_current_user),
-):
-    user_id = current_user.get("id")
 
+@app.post("/items/create/{user_id}")
+def create_item_by_user_id(user_id: int, request_body: validation.FavouriteGameTool):
     cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))
     user = cursor.fetchone()
 
@@ -226,7 +208,7 @@ def create_item_by_token(
 def update_likes(id: int, item: validation.UpdateLikes):
     updated_likes = item.likes
     try:
-       
+        
         check_query = "SELECT id FROM favourite_game_tools WHERE id = %s"
         cursor.execute(check_query, (id,))
         result = cursor.fetchone()

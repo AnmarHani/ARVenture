@@ -38,9 +38,10 @@ nav:
       - Design Activity: execution/design.md
       - Implementation Activity: execution/implementation.md
     - Testing (V&V) Activity:
-      - Validation:
-        - Functional: index.md
-        - Non Functional: index.md
+      - Validation: execution/testing.md
       - Verification: index.md
     - Evolution Activity:
       - Home: index.md
+
+site_dir: docs
+docs_dir: dev-docs

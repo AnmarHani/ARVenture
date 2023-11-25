@@ -1,39 +1,80 @@
-from setup import engine, get_single_db
-import models
+from faker import Faker
+import mysql.connector
+from mysql.connector.cursor_cext import CMySQLCursor
+from passlib.hash import pbkdf2_sha256
+from validation import User, FavouriteGameTool
+
+fake = Faker()
 
 def fill_db():
-    db = get_single_db()
+    try:
+        conn = mysql.connector.connect(
+            host='localhost',
+            database='arventure',
+            user='root',
+            password='2459'
+        )
+        cursor = conn.cursor(cursor_class=CMySQLCursor)
+        print("Database connection was successful!")
+    except mysql.connector.Error as error:
+        print("Connecting to the database failed")
+        print("Error:", error)
+        return
+
     for i in range(1, 100):
         if i > 25:
-            db_user = models.User(username=f"User {i}", password=f"wasd1234", email=f"User{i}@gmail.com", country="United States")
-            db.add(db_user)
-            db.commit()
-            db_tool = models.FavouriteGameTool(tool_name=f"Tool {i}", game_name=f"DBD", likes=0, dislikes=20*i, user_id=i+1)
-            db.add(db_tool)
-            db.commit()
-        if i > 50:
-            db_user = models.User(username=f"User {i}", password=f"wasd1234", email=f"User{i}@gmail.com", country="Germany")
-            db.add(db_user)
-            db.commit()
-            db_tool = models.FavouriteGameTool(tool_name=f"Tool {i}", game_name=f"No Man's Sky", likes=100*i, dislikes=0, user_id=i+1)
-            db.add(db_tool)
-            db.commit()
-        if i > 75:
-            db_user = models.User(username=f"User {i}", password=f"wasd1234", email=f"User{i}@gmail.com", country="United Kingdom")
-            db.add(db_user)
-            db.commit()
-            db_tool = models.FavouriteGameTool(tool_name=f"Tool {i}", game_name=f"Fifa {i}", likes=10+i, dislikes=i, user_id=i+1)
-            db.add(db_tool)
-            db.commit()
+            # Create a fake user
+            username = fake.user_name()
+            email = fake.email()
+            country = fake.country()
+            password_hash = pbkdf2_sha256.hash("wasd1234")
 
-        db_user = models.User(username=f"User {i}", password=f"wasd1234", email=f"User{i}@gmail.com", country="Saudi Arabia")
-        db.add(db_user)
-        db.commit()
+            # Validate and create a User instance
+            user = User(username=username, email=email, country=country, password=password_hash)
+            user_dict = user.dict()
 
-        db_tool = models.FavouriteGameTool(tool_name=f"Tool {i}", game_name=f"Minecraft", likes=i, dislikes=i, user_id=i+1)
-        db.add(db_tool)
-        db.commit()
+            
+            query = """
+            INSERT INTO users (username, email, country, password)
+            VALUES (%s, %s, %s, %s)
+            """
+            values = (
+                user_dict["username"],
+                user_dict["email"],
+                user_dict["country"],
+                user_dict["password"],
+            )
+            cursor.execute(query, values)
+            conn.commit()
 
+            
+            user_id = cursor.lastrowid
 
+           
+            game_names = ["DBD", "Minecraft", "FIFA", "No Man's Sky"]
 
-        
+            
+            game_name = fake.random_element(game_names)
+
+            #
+            tool_name = fake.word()
+            dislikes = 20 * i
+
+           
+            game_tool = FavouriteGameTool(tool_name=tool_name, game_name=game_name, dislikes=dislikes)
+            game_tool_dict = game_tool.dict()
+
+            
+            query = """
+            INSERT INTO favourite_game_tools (user_id, tool_name, game_name, likes, dislikes)
+            VALUES (%s, %s, %s, %s, %s)
+            """
+            values = (
+                user_id,
+                game_tool_dict["tool_name"],
+                game_tool_dict["game_name"],
+                game_tool_dict["likes"],
+                game_tool_dict["dislikes"],
+            )
+            cursor.execute(query, values)
+            conn.commit()

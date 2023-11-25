@@ -1,3 +1,27 @@
+# ARVenture
+
+Table of contents:
+- [ARVenture](#arventure)
+- [ARVenture Project Overview](#arventure-project-overview)
+- [Summary](#summary)
+  - [Credits](#credits)
+- [Table of contents:](#table-of-contents)
+- [Live Examples](#live-examples)
+- [How to Run Code Locally](#how-to-run-code-locally)
+    - [1. First, clone the repository or download the zip code into your local desktop.](#1-first-clone-the-repository-or-download-the-zip-code-into-your-local-desktop)
+  - [2a. Docker](#2a-docker)
+  - [2b. Manual](#2b-manual)
+  - [1. Requirements Specification](#1-requirements-specification)
+  - [2. Design](#2-design)
+  - [3. Implementation](#3-implementation)
+    - [ARV Frontend Web Technologies:](#arv-frontend-web-technologies)
+    - [ARV API Backend Technologies:](#arv-api-backend-technologies)
+    - [Analysis API Backend Technologies:](#analysis-api-backend-technologies)
+    - [Analysis Frontend Web Technologies:](#analysis-frontend-web-technologies)
+  - [4. Verification and Validation](#4-verification-and-validation)
+  - [5. Deployment and Evolution and Maintenance](#5-deployment-and-evolution-and-maintenance)
+
+
 # ARVenture Project Overview
 
 ARVenture is an idea of an AR Glasses that offers a system of making real world objects after wearing the glasses to virtual objects and tools. It consists of several components and systems. You can go to the docs page from here.
