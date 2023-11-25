@@ -16,8 +16,7 @@
 
   async function register() {
     result = await apiRegister(username, email, password, country);
-    goto("/")
-    alert("Please Refresh Page and Login")
+    goto("/sign-in")
 
   }
 </script>

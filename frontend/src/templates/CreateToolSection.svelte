@@ -1,18 +1,18 @@
 <script>
   import { goto } from '$app/navigation';
-  import AddTool from "../api/create-item.js";
+  import createToolAPI from "../api/create-item.js";
   import Button from "../components/Button.svelte";
   import Title from "../components/Title.svelte";
   import LabelWithInput from "../components/LabelWithInput.svelte";
   import Dropdown from "../components/Dropdown.svelte";
-  let tool_name = "";
-  let game_name = "Minecraft";
+  let toolName = "";
+  let gameName = "Minecraft";
+
+  
 
   async function createTool() {
-    await AddTool(localStorage.getItem("user_id"), tool_name, game_name);
-    goto('/')
-    alert("Please Refresh Page and go to favourite Tools")
-
+    await createToolAPI(toolName, gameName);
+    goto('/tools')
   }
 </script>
 
@@ -21,7 +21,7 @@
 
   <form>
     <Dropdown
-      bind:value={game_name}
+      bind:value={gameName}
       label="Choose Game"
       list={["Minecraft", "No Man's Sky"]}
     />
@@ -29,7 +29,7 @@
       placeholder="Diamond Sword"
       type="text"
       required
-      bind:value={tool_name}
+      bind:value={toolName}
     >
       Choose Tool</LabelWithInput
     >

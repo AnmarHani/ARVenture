@@ -3,16 +3,19 @@ import mysql.connector
 from mysql.connector.cursor_cext import CMySQLCursor
 from passlib.hash import pbkdf2_sha256
 from validation import User, FavouriteGameTool
+import time
 
 fake = Faker()
+
 
 def fill_db():
     try:
         conn = mysql.connector.connect(
-            host='localhost',
-            database='arventure',
-            user='root',
-            password='2459'
+            host="database",
+            user="root",
+            password="root",
+            port=3306,
+            database="arventure",
         )
         cursor = conn.cursor(cursor_class=CMySQLCursor)
         print("Database connection was successful!")
@@ -30,10 +33,11 @@ def fill_db():
             password_hash = pbkdf2_sha256.hash("wasd1234")
 
             # Validate and create a User instance
-            user = User(username=username, email=email, country=country, password=password_hash)
+            user = User(
+                username=username, email=email, country=country, password=password_hash
+            )
             user_dict = user.dict()
 
-            
             query = """
             INSERT INTO users (username, email, country, password)
             VALUES (%s, %s, %s, %s)
@@ -47,24 +51,21 @@ def fill_db():
             cursor.execute(query, values)
             conn.commit()
 
-            
             user_id = cursor.lastrowid
 
-           
             game_names = ["DBD", "Minecraft", "FIFA", "No Man's Sky"]
 
-            
             game_name = fake.random_element(game_names)
 
             #
             tool_name = fake.word()
             dislikes = 20 * i
 
-           
-            game_tool = FavouriteGameTool(tool_name=tool_name, game_name=game_name, dislikes=dislikes)
+            game_tool = FavouriteGameTool(
+                tool_name=tool_name, game_name=game_name, dislikes=dislikes
+            )
             game_tool_dict = game_tool.dict()
 
-            
             query = """
             INSERT INTO favourite_game_tools (user_id, tool_name, game_name, likes, dislikes)
             VALUES (%s, %s, %s, %s, %s)

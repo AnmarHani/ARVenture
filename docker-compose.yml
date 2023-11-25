@@ -1,12 +1,25 @@
 version: '3'
 
 services:
+  database:
+    image: mysql:8.2.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: arventure
+    ports:
+      - 3307:3306
+    
   backend:
     build: ./backend
     ports:
       - 8080:8080
     volumes:
       - ./backend:/app
+    depends_on:
+      - database
+
   frontend:
     build: ./frontend
     ports:
@@ -15,3 +28,12 @@ services:
       - ./frontend:/app
       - /app/node_modules
     tty: true
+    depends_on:
+      - backend
+
+  analysis_dashboard:
+    build: ./data_analysis
+    ports:
+      - 8501:8501
+    depends_on:
+      - database

@@ -1,53 +1,19 @@
+# ARVenture Execution Implementation Phase
+
 ## Table of contents
+- [ARVenture Execution Implementation Phase](#arventure-execution-implementation-phase)
+  - [Table of contents](#table-of-contents)
+  - [Main Web Portfolio](#main-web-portfolio)
+    - [Frontend](#frontend)
+    - [Backend (API)](#backend-api)
+  - [Data Analysis Dashboard](#data-analysis-dashboard)
+  - [Mobile Application](#mobile-application)
+  - [AR System](#ar-system)
 
-1. Introduction
-2. Requirements
-3. Design
-4. Implementation  
-   4.1 Frontend  
-   4.2Backend
-5. Conclusion
 
-## 1.Introduction
+## Main Web Portfolio
 
-    Welcome to the world of ARventure, where gaming takes on a whole new dimension. In this exciting project, we're on a mission to transform the way you play and experience games by seamlessly blending augmented reality with real-world interactions.
-
-## 2.Requirements
-
-- Rq1\ user can login.
-- Rq2\ user can pre-order the glasses.
-
-- Rq3\ user can have overview abut glasses.
-
-- Rq4\ user can add game and item to tray the glasses.
-
-- Rq5\ user can see what he adds.
-
-## 3.Design
-
-Use case: Rq1\ user can sign in here
-
-![ ](img/signin.png)
-
-Use case: Rq2\ user will pre-order the glasses.
-
-![ ](img/ProductPage.png)
-
-Use case: Rq3\ landing page where user can have overview about the glasses.
-
-![](img/LandingPage.png)
-
-use case: Rq4\user can vote for favorite game he wants and try it.
-
-![ ](img/ARVoteSearchPage.png)
-
-use case: Rq5\ user will see The item.
-
-![ ](img/ToolSearchPage.png)
-
-## 4.Implementation
-
-### 4.1 Frontend
+### Frontend
 
 **Home page**:
 
@@ -80,7 +46,7 @@ use case: Rq5\ user will see The item.
 ![ ](img/aboutus1.png)
 ![ ](img/aboutus2.png)
 
-### 4.2 Backend
+### Backend (API)
 
 **register:**
 
@@ -167,6 +133,13 @@ PUT update_dislikes(favourite_id, likes_dislikes):
 6-Commits the changes to the database.  
 7-Returns a response with a message "Dislikes updated successfully".
 
-## 5.Conclusion
- 
- In conclusion, ARventure is set to change the way you play games. We're combining augmented reality with real-world interactions to create an exciting, immersive experience. Get ready for a whole new way to play and have fun with ARventure.
+## Data Analysis Dashboard
+
+
+## Mobile Application
+
+> TODO
+
+## AR System
+
+> TODO

@@ -1,4 +1,3 @@
-SQLAlchemy==2.0.23
 fastapi==0.104.1
 pydantic==2.4.2
 uvicorn==0.24.0
@@ -6,4 +5,6 @@ pandas==2.1.2
 matplotlib==3.8.1
 numpy==1.26.1
 passlib==1.7.4
-jose[cryptography]==1.0.0
+python-jose
+mysql-connector-python
+faker

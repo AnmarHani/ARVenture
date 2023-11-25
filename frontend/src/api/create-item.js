@@ -1,18 +1,20 @@
-async function addFavorite(user_id, tool_name, game_name) {
-  const fav_item_object = {
-    tool_name: tool_name,
-    game_name: game_name,
+import { API_URL } from "./api";
+
+async function addFavorite(toolName, gameName) {
+  const itemObject = {
+    tool_name: toolName,
+    game_name: gameName,
     likes: 0,
-    dislikes: 0,
-    user_id: user_id
+    dislikes: 0
   };
 
-  const response = await fetch(`https://arventure-backend-dev-aezx.1.sg-1.fl0.io/favourite/${user_id}`, {
+  const response = await fetch(`${API_URL}/items/create`, {
     method: 'POST',
     headers: {
+      'token': localStorage.getItem("access_token"),
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(fav_item_object)
+    body: JSON.stringify(itemObject)
   });
 
   const result = await response.json();

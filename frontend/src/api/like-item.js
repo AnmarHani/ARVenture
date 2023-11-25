@@ -1,5 +1,8 @@
-async function updateLikes(favourite_id, likes) {
-    const response = await fetch(`https://arventure-backend-dev-aezx.1.sg-1.fl0.io/i/${favourite_id}/likes`, {
+import { API_URL } from "./api";
+
+
+async function updateLikes(id, likes) {
+    const response = await fetch(`${API_URL}/items/like/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

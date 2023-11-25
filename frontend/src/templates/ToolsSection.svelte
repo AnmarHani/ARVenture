@@ -1,6 +1,4 @@
 <script>
-  import { goto } from '$app/navigation';
-
   import Button from "../components/Button.svelte";
   import { onMount } from "svelte";
   import getAllItemsAPI from "../api/get-all-items.js";
@@ -21,14 +19,12 @@
 
   async function like(id, likes) {
     await likeItemAPI(id, likes);
-    goto("/")
-    alert("Please Refresh Page")
+    window.location.reload()
   }
-  
+
   async function dislike(id, likes) {
     await dislikeItemAPI(id, likes);
-    goto("/")
-    alert("Please Refresh Page")
+    window.location.reload()
 
   }
 

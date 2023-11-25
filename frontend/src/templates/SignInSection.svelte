@@ -11,12 +11,10 @@
   let result = "";
 
   async function login() {
-    console.log(username, password);
     result = await apiLogin(username, password);
-    localStorage.setItem("user_id", result);
-    goto("/")
-    alert("Please Refresh Page")
-    
+    localStorage.setItem("access_token", result);
+    goto("/create-tool")
+    window.location.reload()
 
   }
 </script>

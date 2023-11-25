@@ -1,5 +1,5 @@
 <script>
-  import Button from "../components/Button.svelte";
+  import Link from "../components/Link.svelte";
   import Title from "../components/Title.svelte";
   import Description from "../components/Description.svelte";
 </script>
@@ -16,7 +16,7 @@
       ARVGlass and unlock limitless adventures.
     </Description>
     <div class="button-container">
-      <Button>Pre-order Now!</Button>
+      <Link linkTo="/product">Pre-order Now!</Link>
     </div>
   </div>
 </section>

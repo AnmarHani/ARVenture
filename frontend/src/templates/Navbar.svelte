@@ -4,16 +4,16 @@
   import Link from "../components/Link.svelte";
   import Button from "../components/Button.svelte";
   import { onMount } from "svelte";
-  let user_id;
+  let access_token;
+  
   onMount(() => {
-    user_id = localStorage.getItem("user_id");
+    access_token = localStorage.getItem("access_token");
   });
 
   function deleteUser() {
     localStorage.clear();
     goto("/");
-    alert("Please Refresh Page")
-
+    window.location.reload()
 
   }
 </script>
@@ -38,7 +38,7 @@
         <Link type="secondary nav-item" linkTo="/">Home</Link>
         <Link type="secondary nav-item" linkTo="/about-us">About us</Link>
         <Link type="secondary nav-item" linkTo="/product">Product</Link>
-        {#if user_id}
+        {#if access_token}
           <Link type="secondary nav-item" linkTo="/create-tool"
             >Create Tool</Link
           >

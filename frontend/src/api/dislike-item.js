@@ -1,5 +1,7 @@
+import { API_URL } from "./api";
+
 async function updateDislikes(id, dislikes) {
-  const response = await fetch(`https://arventure-backend-dev-aezx.1.sg-1.fl0.io/items/dislike/${id}`, {
+  const response = await fetch(`${API_URL}/items/dislike/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

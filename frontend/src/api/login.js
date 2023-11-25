@@ -1,5 +1,8 @@
+import { API_URL } from "./api";
+
+
 async function login(username, password) {
-    const response = await fetch("https://arventure-backend-dev-aezx.1.sg-1.fl0.io/user/login", {
+    const response = await fetch(`${API_URL}/user/login`, {
         method: "POST", 
         headers: {
             'Content-Type': 'application/json'
@@ -10,7 +13,7 @@ async function login(username, password) {
         }), 
     });
     const result = await response.json();
-    return result.user_id
+    return result.access_token
 }
 
 export default login

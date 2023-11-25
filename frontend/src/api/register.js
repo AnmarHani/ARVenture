@@ -1,5 +1,9 @@
+import { API_URL } from "./api";
+
+
 async function register(username, email ,password, country) {
-    const response = await fetch("https://arventure-backend-dev-aezx.1.sg-1.fl0.io/user/register", {
+    console.log(API_URL)
+    const response = await fetch(`${API_URL}/user/register`, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'

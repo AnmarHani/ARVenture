@@ -1,0 +1,8 @@
+pandas
+streamlit
+matplotlib
+faker
+mysql-connector-python
+Pillow
+passlib==1.7.4
+python-jose
