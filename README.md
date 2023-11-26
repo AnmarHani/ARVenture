@@ -1,6 +1,7 @@
 # ARVenture
 
 Table of contents:
+
 - [ARVenture](#arventure)
 - [ARVenture Project Overview](#arventure-project-overview)
 - [Summary](#summary)
@@ -9,18 +10,16 @@ Table of contents:
 - [Live Examples](#live-examples)
 - [How to Run Code Locally](#how-to-run-code-locally)
     - [1. First, clone the repository or download the zip code into your local desktop.](#1-first-clone-the-repository-or-download-the-zip-code-into-your-local-desktop)
-  - [2a. Docker](#2a-docker)
+  - [2a. Docker (RECOMMENDED)](#2a-docker-recommended)
   - [2b. Manual](#2b-manual)
   - [1. Requirements Specification](#1-requirements-specification)
   - [2. Design](#2-design)
   - [3. Implementation](#3-implementation)
     - [ARV Frontend Web Technologies:](#arv-frontend-web-technologies)
     - [ARV API Backend Technologies:](#arv-api-backend-technologies)
-    - [Analysis API Backend Technologies:](#analysis-api-backend-technologies)
-    - [Analysis Frontend Web Technologies:](#analysis-frontend-web-technologies)
+    - [Analysis Dashboard Technologies:](#analysis-dashboard-technologies)
   - [4. Verification and Validation](#4-verification-and-validation)
   - [5. Deployment and Evolution and Maintenance](#5-deployment-and-evolution-and-maintenance)
-
 
 # ARVenture Project Overview
 
@@ -44,19 +43,39 @@ Also, Github Repository [ARVenture Github Repo]()
 
 # Table of contents:
 
+- [ARVenture](#arventure)
+- [ARVenture Project Overview](#arventure-project-overview)
+- [Summary](#summary)
+  - [Credits](#credits)
+- [Table of contents:](#table-of-contents)
+- [Live Examples](#live-examples)
+- [How to Run Code Locally](#how-to-run-code-locally)
+    - [1. First, clone the repository or download the zip code into your local desktop.](#1-first-clone-the-repository-or-download-the-zip-code-into-your-local-desktop)
+  - [2a. Docker (RECOMMENDED)](#2a-docker-recommended)
+  - [2b. Manual](#2b-manual)
+  - [1. Requirements Specification](#1-requirements-specification)
+  - [2. Design](#2-design)
+  - [3. Implementation](#3-implementation)
+    - [ARV Frontend Web Technologies:](#arv-frontend-web-technologies)
+    - [ARV API Backend Technologies:](#arv-api-backend-technologies)
+    - [Analysis Dashboard Technologies:](#analysis-dashboard-technologies)
+  - [4. Verification and Validation](#4-verification-and-validation)
+  - [5. Deployment and Evolution and Maintenance](#5-deployment-and-evolution-and-maintenance)
 
 # Live Examples
 
 Frontend: url
 Backend: url
-Analysis Frontend: url
-Analysis Backend: url
+Analysis Dashboard: url
+Docs: https://anmarhani.github.io/ARVenture/
 
 # How to Run Code Locally
 
 ### 1. First, clone the repository or download the zip code into your local desktop.
 
-## 2a. Docker
+## 2a. Docker (RECOMMENDED)
+
+> NOTE: it may take up to 2+ minutes to setup. Please be patient, because this doesnt force you to download any dependencies except Docker.
 
 1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. Then, go to root directory, in terminal run `docker-compose -f docker-compose.yml up --build`
@@ -72,12 +91,12 @@ Analysis Backend: url
 ## 1. Requirements Specification
 
 In this stage we collected requirements, analysed, priotriezed it, and specified it.
-[Go to Requirements Specification Document](./documents/project-management/execution/implementation.md)
+[Go to Requirements Specification Document](https://anmarhani.github.io/ARVenture/execution/specification/)
 
 ## 2. Design
 
 In this stage, System and Software Architecture is designed. Also, user interfaces are designed.
-[Go to Design Document](./documents/project-management/execution/implementation.md)
+[Go to Design Document](https://anmarhani.github.io/ARVenture/execution/design/)
 
 ## 3. Implementation
 
@@ -85,12 +104,11 @@ in this stage, We have several implementation stages:
 
 - ARV API Backend (DONE)
 - ARV Frontend Web (DONE)
-- Analysis API Backend (ONGOING)
-- Analysis Frontend Web (ONGOING)
-- Mobile Application (LATER)
+- Analysis Dashboard (DONE)
+- Mobile Application (DONE)
 - VR Glasses and System (LATER)
 
-[Go to Implementation Document](./documents/project-management/execution/implementation.md)
+[Go to Implementation Document](https://anmarhani.github.io/ARVenture/execution/implementation/)
 
 ### ARV Frontend Web Technologies:
 
@@ -101,25 +119,22 @@ in this stage, We have several implementation stages:
 ### ARV API Backend Technologies:
 
 - FastAPI
-- PostegreSQL Database
-- SQLAlchemy
+- MySQL Database
 
-### Analysis API Backend Technologies:
+### Analysis Dashboard Technologies:
 
-- FastAPI
 - Pandas
 - Numpy
 - Matplotlib
 - SQL
-
-### Analysis Frontend Web Technologies:
-
 - Streamlit
 
 ## 4. Verification and Validation
+
 In this stage we organized and structured testing stages and testing methods.
 [Go to Verification and Validation Document](./documents/project-management/execution/implementation.md)
 
 ## 5. Deployment and Evolution and Maintenance
+
 In this stage we deployed the system and planned for scalability and evolution.
 [Go to Evolution Document](./documents/project-management/execution/implementation.md)

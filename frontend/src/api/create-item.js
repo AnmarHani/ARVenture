@@ -1,6 +1,6 @@
 import { API_URL } from "./api";
 
-async function addFavorite(toolName, gameName) {
+async function addFavorite(toolName, gameName, url=API_URL) {
   const itemObject = {
     tool_name: toolName,
     game_name: gameName,
@@ -8,7 +8,7 @@ async function addFavorite(toolName, gameName) {
     dislikes: 0
   };
 
-  const response = await fetch(`${API_URL}/items/create`, {
+  const response = await fetch(`${url}/items/create`, {
     method: 'POST',
     headers: {
       'token': localStorage.getItem("access_token"),

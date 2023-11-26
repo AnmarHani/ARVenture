@@ -11,6 +11,7 @@ import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 import validation
 import logging
+import db
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -29,13 +30,7 @@ app.add_middleware(
 
 while True:
     try:
-        conn = mysql.connector.connect(
-            host="database",
-            user="root",
-            password="root",
-            port=3306,
-            database="arventure",
-        )
+        conn = db.connect_db()
         cursor = conn.cursor(cursor_class=CMySQLCursor)
         queries = [
             """
@@ -45,6 +40,7 @@ while True:
                 email VARCHAR(200),
                 password VARCHAR(200),
                 country VARCHAR(200),
+                UNIQUE (username),
                 PRIMARY KEY(id)
             );
             """,
@@ -59,7 +55,22 @@ while True:
                 PRIMARY KEY (id),
                 FOREIGN KEY(user_id) REFERENCES users(id)
             );
+            """,
             """
+            CREATE TABLE IF NOT EXISTS contact (
+                id INT NOT NULL AUTO_INCREMENT,
+                firstName VARCHAR(50),
+                lastName VARCHAR(50),
+                gender VARCHAR(10), 
+                mobile VARCHAR(20),
+                dateOfBirth DATE,
+                email VARCHAR(100),
+                language VARCHAR(50),
+                messageBody TEXT,
+                country VARCHAR(50),
+                PRIMARY KEY (id)
+            );
+            """,
         ]
 
         for query in queries:
@@ -147,6 +158,30 @@ def login_user(user: validation.Login):
             return {"message": "Invalid password"}
     except mysql.connector.Error as error:
         return {"message": "User login failed", "error": str(error)}
+
+
+@app.post("/user/send_contact")
+def contact_user(contact: validation.Contact):
+    try:
+        query = "INSERT INTO contact (firstName, lastName, gender, mobile, dateOfBirth, email, language, messageBody, country) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        values = (
+            contact.firstName,
+            contact.lastName,
+            contact.gender,
+            contact.mobile,
+            datetime.strptime(contact.dateOfBirth, "%Y-%m-%d").strftime("%Y-%m-%d"),
+            contact.email,
+            contact.language,
+            contact.messageBody,
+            contact.country,
+        )
+        cursor.execute(query, values)
+        conn.commit()
+        return {"message": "Form sent successfully"}
+    except ValueError as validation_error:
+        raise HTTPException(status_code=400, detail=str(validation_error))
+    except mysql.connector.Error as error:
+        return {"message": "Failed to send form", "error": str(error)}
 
 
 async def get_current_user(token: str = Header(None)):

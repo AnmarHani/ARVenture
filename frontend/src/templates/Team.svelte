@@ -1,6 +1,8 @@
-<div>
-  <h1>Our Team</h1>
-</div>
+<script>
+  import SubTitle from "../components/SubTitle.svelte";
+</script>
+
+<SubTitle>Our Team</SubTitle>
 <section>
   <a href="https://anmarhani.vercel.app" target="_blank">
     <img src="/anmarhanipfp.jpeg" alt="" />
@@ -14,7 +16,7 @@
   </a>
 
   <a href="https://ziyadjameel.github.io" target="_blank">
-    <img src="/ziyadjameel.png" alt="" />
+    <img src="/ziyad-image.png" alt="" />
     <h3>Ziyad Alghamdi</h3>
     <h5>Back-end Developer</h5>
   </a>
@@ -24,8 +26,8 @@
     <h3>Raef Shah</h3>
     <h5>Full Stack Designer</h5>
   </a>
-  <a href="" target="_blank">
-    <img src="/unnamed.jpg" alt="" />
+  <a href="/" target="_blank">
+    <img src="/yaser-image.png" alt="" />
     <h3>Yasir Kaid</h3>
     <h5>Frontend and Mobile Developer</h5>
   </a>
@@ -42,6 +44,7 @@
     width: 100vw;
     flex-wrap: wrap;
     gap: 10px;
+    margin: 15px auto;
   }
   a {
     display: flex;

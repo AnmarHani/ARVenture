@@ -3,25 +3,58 @@ import pandas as pd
 import mysql.connector
 from PIL import Image
 import matplotlib.pyplot as plt
+import requests
+import geopandas as gpd
+from datetime import datetime
+import variables
 
 st.markdown(
     '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">',
     unsafe_allow_html=True,
 )
+import numpy as np
 
 
 def authenticate(username, password):
-    return username == "ZiyadAdmin" and password == "adminAnmar"
+    return username == "admin" and password == "admin"
 
 
-@st.cache(allow_output_mutation=True)
 def fetch_data_mysql(query):
-    conn = mysql.connector.connect(
-        host="database", user="root", password="root", port=3306, database="arventure"
-    )
-    df = pd.read_sql(query, conn)
-    conn.close()
-    return df
+    @st.cache_data()
+    def _fetch_data(query):
+        conn = variables.connect_db()
+        df = pd.read_sql(query, conn)
+        conn.close()
+        return df
+
+    return _fetch_data(query)
+
+
+def plot_country_map(df):
+    world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
+    countries = df["country"].unique()
+
+    selected_countries = world[world.name.isin(countries)]
+    selected_countries.plot(figsize=(10, 6))
+    plt.title("Countries from Database")
+    plt.axis("off")
+    st.pyplot(plt)
+
+
+def fill_database():
+    response = requests.get(f"{variables.ARV_API_URL}/fill-db")
+    if response.status_code == 200:
+        st.success("Filled the Database!")
+    else:
+        st.error("Failed to fill the database.")
+
+
+def delete_database():
+    response = requests.delete(f"{variables.ARV_API_URL}0/delete-db")
+    if response.status_code == 200:
+        st.success("Deleted the Database!")
+    else:
+        st.error("Failed to delete the database.")
 
 
 def plot_bar_chart(df, title, x_label, y_label):
@@ -64,7 +97,7 @@ def main():
                 st.session_state.logged_in = True
             else:
                 st.warning("Incorrect username or password")
-                return
+                return ""
 
     if "logged_in" in st.session_state and st.session_state.logged_in:
         logo_path = "./Logo.png"
@@ -76,7 +109,13 @@ def main():
             st.error(f"Error loading the logo: {e}")
 
         st.sidebar.title("Navigation")
-        sections = ["Top Dislikes and Likes", "Games by Country", "Average", "Database"]
+        sections = [
+            "Top Dislikes and Likes",
+            "Games by Country",
+            "Average",
+            "Database",
+            "Contact Form Analysis",
+        ]
         section = st.sidebar.radio("Go to", sections)
 
         if section == "Top Dislikes and Likes":
@@ -149,7 +188,11 @@ def main():
 
         elif section == "Database":
             st.header("Database Information")
-
+            st.subheader("Database Operations")
+            if st.button("Fill the Database"):
+                fill_database()
+            if st.button("Delete the Database"):
+                delete_database()
             st.subheader("List of Tables")
             query_tables = "SHOW TABLES"
             tables_df = fetch_data_mysql(query_tables)
@@ -161,6 +204,79 @@ def main():
                 query_data = f"SELECT * FROM {table}"
                 data_df = fetch_data_mysql(query_data)
                 st.dataframe(data_df)
+        elif section == "Contact Form Analysis":
+            st.header("Contact Form Analysis")
+
+            query_gender_distribution = (
+                "SELECT gender, COUNT(*) AS count FROM contact GROUP BY gender"
+            )
+            gender_distribution_df = fetch_data_mysql(query_gender_distribution)
+
+            st.subheader("Gender Distribution")
+
+            if gender_distribution_df is not None and not gender_distribution_df.empty:
+                plt.figure(figsize=(8, 8))
+                explode = [0.1 for _ in range(len(gender_distribution_df))]
+                plt.pie(
+                    gender_distribution_df["count"],
+                    labels=gender_distribution_df["gender"],
+                    autopct="%1.1f%%",
+                    explode=explode,
+                )
+                plt.title("Gender Distribution in Contact Form")
+                plt.legend(title="Gender")
+                st.pyplot(plt)
+            else:
+                st.write("No data available for gender distribution.")
+            st.subheader("Age Group Distribution")
+            query_age_distribution = "SELECT dateOfBirth FROM contact"
+            age_distribution_df = fetch_data_mysql(query_age_distribution)
+            age_distribution_df["dateOfBirth"] = pd.to_datetime(
+                age_distribution_df["dateOfBirth"]
+            )
+            age_distribution_df["age"] = (
+                pd.to_datetime("today") - age_distribution_df["dateOfBirth"]
+            ).dt.days // 365
+            age_bins = [0, 12, 18, 40, np.inf]
+            age_labels = ["Child", "Teenager", "Adult", "Elderly"]
+            age_distribution_df["age_group"] = pd.cut(
+                age_distribution_df["age"], bins=age_bins, labels=age_labels
+            )
+
+            if not age_distribution_df.empty:
+                age_percentage = (
+                    age_distribution_df["age_group"].value_counts(normalize=True) * 100
+                )
+                plt.figure(figsize=(8, 6))
+                age_percentage.plot(kind="bar", rot=45)
+                plt.title("Percentage Distribution of Age Groups")
+                plt.xlabel("Age Groups")
+                plt.ylabel("Percentage")
+                plt.tight_layout()
+                st.pyplot(plt)
+            st.subheader("Country Distribution Visualization")
+            query_countries = "SELECT DISTINCT country FROM contact"
+            countries_df = fetch_data_mysql(query_countries)
+            if not countries_df.empty:
+                plot_country_map(countries_df)
+
+            else:
+                st.write("No data available for country visualization.")
+
+            st.write("No data available for age distribution.")
+            st.header("Language Distribution")
+            query_languages = (
+                "SELECT language, COUNT(*) AS count FROM contact GROUP BY language"
+            )
+            languages_df = fetch_data_mysql(query_languages)
+            if not languages_df.empty:
+                plt.figure(figsize=(10, 6))
+            plt.bar(languages_df["language"], languages_df["count"])
+            plt.title("Language Distribution")
+            plt.xlabel("Language")
+            plt.ylabel("Count")
+            plt.xticks(rotation=45)
+            st.pyplot(plt)
 
 
 if __name__ == "__main__":

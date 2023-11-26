@@ -1,5 +1,5 @@
-<script>
-  import { goto } from '$app/navigation';
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
+  import { goto } from "$app/navigation";
   import createToolAPI from "../api/create-item.js";
   import Button from "../components/Button.svelte";
   import Title from "../components/Title.svelte";
@@ -8,17 +8,24 @@
   let toolName = "";
   let gameName = "Minecraft";
 
-  
-
   async function createTool() {
     await createToolAPI(toolName, gameName);
-    goto('/tools')
+    goto("/tools");
+  }
+
+  let title;
+
+  $: if (title) {
+    new Typed(title, {
+      strings: ["Your Voice, Your Game Empower AR Gaming with ARVote!"],
+      typeSpeed: 70,
+      loop: false,
+    });
   }
 </script>
 
-<main>
-  <Title>Your Voice, Your Game Empower AR Gaming with ARVote</Title>
-
+<section>
+  <Title bind:component={title} />
   <form>
     <Dropdown
       bind:value={gameName}
@@ -35,38 +42,42 @@
     >
     <Button type="primary" onClick={createTool}>Create</Button>
   </form>
-</main>
+</section>
 
 <style>
-  main {
+  section {
     background-size: cover;
     background-repeat: no-repeat;
-    color: white;
     background-image: url("/smartglasses.png");
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
+    text-align: center;
+    height: 70vh;
+    padding: 10% 0;
   }
-
   form {
+    color: white;
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    text-align: center;
     align-items: center;
+    margin: 15px auto;
+    width: 50%;
+    gap: 15px;
   }
-
-  @media (max-width: 550px) {
-    label {
-      font-size: 20px;
-    }
-  }
-  @media (max-width: 1260px) {
+  @media (max-width: 1250px) {
     form {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 20px;
+    }
+    section {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("/smartglasses.png");
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      margin: 5%;
     }
   }
 </style>

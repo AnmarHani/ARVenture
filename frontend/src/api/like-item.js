@@ -1,8 +1,8 @@
 import { API_URL } from "./api";
 
 
-async function updateLikes(id, likes) {
-    const response = await fetch(`${API_URL}/items/like/${id}`, {
+async function updateLikes(id, likes, url=API_URL) {
+    const response = await fetch(`${url}/items/like/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

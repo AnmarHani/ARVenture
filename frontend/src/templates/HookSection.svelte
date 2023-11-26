@@ -34,6 +34,7 @@
     display: flex;
     justify-content: space-around;
     margin: 5rem;
+    gap: 15px;
   }
 
   @media (max-width: 768px) {

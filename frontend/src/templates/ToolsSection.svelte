@@ -19,13 +19,12 @@
 
   async function like(id, likes) {
     await likeItemAPI(id, likes);
-    window.location.reload()
+    window.location.reload();
   }
 
   async function dislike(id, likes) {
     await dislikeItemAPI(id, likes);
-    window.location.reload()
-
+    window.location.reload();
   }
 
   async function getCards() {
@@ -41,6 +40,7 @@
   {#await cards}
     <SubTitle>Loading...</SubTitle>
   {:then cards}
+    <SubTitle>Total Items: {cards.length}</SubTitle>
     {#each cards as card}
       <div class="card">
         <div class="content">
@@ -82,22 +82,17 @@
   section {
     color: white;
     background: linear-gradient(#d10ed125, #4aaef121) padding-box;
-    height: 100vh;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 1.3rem;
-    width: 100%;
-  }
-
-  .content {
-    display: flex;
-    align-items: center;
-    color: white;
-    width: fit-content;
+    width: 70%;
+    justify-content: center;
+    margin: 15px auto;
   }
 
   .card {
+    position: relative;
     background: linear-gradient(20deg, rgba(209, 14, 209, 0.171), #4aaef14b)
       padding-box;
     border-radius: 15px;
@@ -105,14 +100,37 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: fit-content;
+    width: 70%;
     height: fit-content;
     margin: 2rem 0;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow-x: hidden;
   }
 
   i {
     color: white;
     font-size: 50px;
     padding-right: 15px;
+  }
+
+  @media only screen and (max-width: 780px) {
+    section {
+      width: 100%;
+    }
+    .card {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .content {
+      display: flex;
+    }
   }
 </style>

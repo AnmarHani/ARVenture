@@ -5,8 +5,8 @@
 </script>
 
 <div>
-  <label for="game">{label}</label>
-  <select name="game" required bind:value>
+  <label for="dropdown">{label}</label>
+  <select name="dropdown" required bind:value={value}>
     {#each list as item}
       <option value={item}>{item}</option>
     {/each}

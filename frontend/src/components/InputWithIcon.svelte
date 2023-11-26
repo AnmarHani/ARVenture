@@ -4,21 +4,75 @@
   export let value = "";
   export let icon;
   export let required = true;
+  export let pattern;
+  export let max = 150;
+  export let min = 10;
 </script>
+
 <div>
-	{#if type === "text"}
-    <input type="text" placeholder={placeholder} required={required} bind:value={value} />
+  {#if type === "text"}
+    <input
+      maxlength={max}
+      minlength={min}
+      {pattern}
+      type="text"
+      {placeholder}
+      {required}
+      bind:value
+    />
+  {/if}
+  {#if type === "email"}
+    <input
+      maxlength={max}
+      minlength={min}
+      {pattern}
+      type="email"
+      {placeholder}
+      {required}
+      bind:value
+    />
   {/if}
   {#if type === "password"}
-    <input type="password" placeholder={placeholder} required={required} bind:value={value} />
+    <input
+      maxlength={max}
+      minlength={min}
+      {pattern}
+      type="password"
+      {placeholder}
+      {required}
+      bind:value
+    />
   {/if}
-  {#if type === "country"}
-  <input type="country" placeholder={placeholder} required={required} bind:value={value} />
-{/if}
+  {#if type === "date"}
+    <input
+      maxlength={max}
+      minlength={min}
+      {pattern}
+      type="date"
+      {placeholder}
+      {required}
+      bind:value
+    />
+  {/if}
+  {#if type === "tel"}
+    <input
+      maxlength={max}
+      minlength={min}
+      {pattern}
+      type="tel"
+      {placeholder}
+      {required}
+      bind:value
+    />
+  {/if}
+
   <i class={icon} />
 </div>
 
 <style>
+  div {
+    position: relative;
+  }
   input {
     width: 100%;
     height: 100%;

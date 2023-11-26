@@ -4,19 +4,14 @@ from mysql.connector.cursor_cext import CMySQLCursor
 from passlib.hash import pbkdf2_sha256
 from validation import User, FavouriteGameTool
 import time
+import db
 
 fake = Faker()
 
 
 def fill_db():
     try:
-        conn = mysql.connector.connect(
-            host="database",
-            user="root",
-            password="root",
-            port=3306,
-            database="arventure",
-        )
+        conn = db.connect_db()
         cursor = conn.cursor(cursor_class=CMySQLCursor)
         print("Database connection was successful!")
     except mysql.connector.Error as error:

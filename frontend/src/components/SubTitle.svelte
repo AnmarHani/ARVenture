@@ -1,16 +1,17 @@
 <script>
-    export let SubTitle;
+  export let component;
+
 </script>
 
-<h2>
-	<slot/>
+<h2 bind:this={component}>
+  <slot />
 </h2>
 
 <style>
-h2 {
-		text-align: center;
-		color: #ffff;
-		font-size: 1.5rem;
-		margin-bottom: 2rem;
-	}
+  h2 {
+    text-align: center;
+    color: #ffff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
 </style>
