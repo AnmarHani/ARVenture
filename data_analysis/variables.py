@@ -1,12 +1,14 @@
 import mysql.connector
+import os
 
-ARV_API_URL = "http://localhost:8080"
+ARV_API_URL = os.environ.get("BACKEND_URL")
+
 
 def connect_db():
     return mysql.connector.connect(
-        host="database",
-        user="root",
-        password="root",
-        port=3306,
-        database="arventure",
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_USERNAME"),
+        password=os.environ.get("DB_PASSWORD"),
+        port=os.environ.get("DB_PORT"),
+        database=os.environ.get("DB_NAME"),
     )

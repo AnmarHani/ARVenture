@@ -8,9 +8,7 @@
     "We're a team of innovators, dreamers, and gamers at heart, committed to" +
     "transforming the way you interact with the world.";
   let descriptionARvote =
-    " At ARVenture, we're passionate about pushing the boundaries of gaming." +
-    "We're a team of innovators, dreamers, and gamers at heart, committed to" +
-    "transforming the way you interact with the world.";
+    "Influence the future of AR gaming with ARVote! Vote for your favorite game elements and help shape our adventure game. Your voice matters. Join us now and create the ultimate AR gaming experience.";
 </script>
 
 <section>

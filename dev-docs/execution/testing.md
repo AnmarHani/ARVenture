@@ -4,6 +4,7 @@
 
 - [ARVenture Execution V\&V (Testing) Phase](#arventure-execution-vv-testing-phase)
   - [Table of contents](#table-of-contents)
+- [Testing tools used](#testing-tools-used)
 - [Software Testing Phases](#software-testing-phases)
   - [Design](#design)
     - [1. Human Based](#1-human-based)
@@ -48,6 +49,11 @@
   - [Evaluation](#evaluation)
     - [Frontend Reports](#frontend-reports)
     - [Backend Reports](#backend-reports)
+
+# Testing tools used
+- Vitest (For Automated Frontend Functional Testing)
+- Lighthouse (For Automated Frontend Nonfunction Testing)
+- Postman (For Manual Backend Functional Testing)
 
 # Software Testing Phases
 

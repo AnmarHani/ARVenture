@@ -27,17 +27,17 @@ ARVenture is an idea of an AR Glasses that offers a system of making real world 
 
 # Summary
 
-Please refer to the document that includes all the files and documents of the ARVenture Project. [ARVenture Documents Home]()
+Please refer to the document that includes all the files and documents of the ARVenture Project. [ARVenture Documents Home](https://anmarhani.github.io/ARVenture/)
 
-Also, Github Repository [ARVenture Github Repo]()
+Also, Github Repository [ARVenture Github Repo](https://github.com/AnmarHani/ARVenture)
 
 ## Credits
 
-- Anmar Hani (2140004) | Team Lead, Software Architect, Test Designer, and Project Manger.
-- Mohamad Alsaadwi (2140519) | Web Frontend Developer.
-- Raef Shah (2141165) | Fullstack Designer.
-- Yaser Kaid (2140847) | Mobile Developer.
-- Ziyad Alghamdi (2142017) | Backend Developer and Data Analyst.
+- Anmar Hani | Team Lead, Software Architect, Test Designer, and Project Manager.
+- Mohamad Alsaadwi | Web Frontend Developer.
+- Raef Shah | Fullstack Designer.
+- Yaser Kaid | Mobile Developer.
+- Ziyad Alghamdi | Backend Developer and Data Analyst.
 
 <!-- Fawaz Khosifan - System Admin and Penetration Tester -->
 
