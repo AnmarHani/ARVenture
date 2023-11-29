@@ -33,13 +33,12 @@ Also, Github Repository [ARVenture Github Repo](https://github.com/AnmarHani/ARV
 
 ## Credits
 
-- Anmar Hani | Team Lead, Software Architect, Test Designer, and Project Manager.
+- Anmar Hani | Team Lead, Software Architect, Test Designer, System Embedded Engineer, and Project Manager.
 - Mohamad Alsaadwi | Web Frontend Developer.
 - Raef Shah | Fullstack Designer.
 - Yaser Kaid | Mobile Developer.
 - Ziyad Alghamdi | Backend Developer and Data Analyst.
-
-<!-- Fawaz Khosifan - System Admin and Penetration Tester -->
+- Fawaz Khosifan | System Administrator and Penetration Tester and Security Specialist
 
 # Table of contents:
 
@@ -64,10 +63,10 @@ Also, Github Repository [ARVenture Github Repo](https://github.com/AnmarHani/ARV
 
 # Live Examples
 
-Frontend: url
-Backend: url
-Analysis Dashboard: url
-Docs: https://anmarhani.github.io/ARVenture/
+- Frontend: [ARVenture Web](https://arventure.vercel.app/)
+- Backend: [ARVenture Backend](https://arventure-dev-hpnx.1.us-1.fl0.io)
+- Analysis Dashboard: [ARVenture Data Analysis Dashboard](https://arventure-imkyv9qx3qdtm5fj9tcbfe.streamlit.app/)
+- Docs: [ARVenture Docs](https://anmarhani.github.io/ARVenture/)
 
 # How to Run Code Locally
 
