@@ -735,60 +735,16 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../evolution/" class="md-nav__link">
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     Evolution Activity
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            Evolution Activity
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -856,8 +812,9 @@
 <ul>
 <li><a href="#arventure-execution-vv-testing-phase">ARVenture Execution V\&amp;V (Testing) Phase</a></li>
 <li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#testing-tools-used">Testing tools used</a></li>
 <li><a href="#software-testing-phases">Software Testing Phases</a></li>
-<li><a href="#1-design">1. Design</a><ul>
+<li><a href="#design">Design</a><ul>
 <li><a href="#1-human-based">1. Human Based</a></li>
 <li><a href="#2-criteria-based">2. Criteria Based</a></li>
 <li><a href="#test-criterion-rules">Test Criterion (Rules)</a></li>
@@ -868,19 +825,64 @@
 <li><a href="#test-sets-test-cases">Test Sets (Test Cases)</a></li>
 <li><a href="#tc1-from-ts1">TC1 From TS1</a></li>
 <li><a href="#tc2-from-ts1">TC2 From TS1</a></li>
+<li><a href="#tc3-from-ts1">TC3 From TS1</a></li>
+<li><a href="#tc4-from-ts1">TC4 From TS1</a></li>
+<li><a href="#tc5-from-ts1">TC5 From TS1</a></li>
+<li><a href="#tc6-from-ts1">TC6 From TS1</a></li>
+<li><a href="#tc7-from-ts1">TC7 From TS1</a></li>
+<li><a href="#tc8-from-ts1">TC8 From TS1</a></li>
+<li><a href="#tc9-from-ts1">TC9 From TS1</a></li>
+<li><a href="#tc10-from-ts1">TC10 From TS1</a></li>
 </ul>
 </li>
-<li><a href="#2-automation">2. Automation</a><ul>
+<li><a href="#automation">Automation</a><ul>
 <li><a href="#tc1-automation-from-ts1">TC1 Automation From TS1</a></li>
+<li><a href="#tc2-automation-from-ts1">TC2 Automation From TS1</a></li>
+<li><a href="#tc3-automation-from-ts1">TC3 Automation From TS1</a></li>
+<li><a href="#tc4-automation-from-ts1">TC4 Automation From TS1</a></li>
+<li><a href="#tc5-automation-from-ts1">TC5 Automation From TS1</a></li>
+<li><a href="#tc6-automation-from-ts1">TC6 Automation From TS1</a></li>
+<li><a href="#tc7-automation-from-ts2">TC7 Automation From TS2</a></li>
+<li><a href="#tc8-automation-from-ts2">TC8 Automation From TS2</a></li>
+<li><a href="#tc9-automation-from-ts2">TC9 Automation From TS2</a></li>
+<li><a href="#tc10-automation-from-ts2">TC10 Automation From TS2</a></li>
 </ul>
 </li>
-<li><a href="#3-execution">3. Execution</a></li>
-<li><a href="#4-evaluation">4. Evaluation</a></li>
+<li><a href="#execution">Execution</a><ul>
+<li><a href="#automatic">Automatic</a></li>
+<li><a href="#frontend">Frontend</a><ul>
+<li><a href="#running-vitest-for-all-ts1-and-ts2">Running Vitest for All TS1 and TS2</a></li>
+</ul>
+</li>
+<li><a href="#manual">Manual</a></li>
+<li><a href="#backend">Backend</a><ul>
+<li><a href="#tc12-manual-execution-from-ts3">TC12 Manual Execution From TS3</a></li>
+<li><a href="#tc13-manual-execution-from-ts3">TC13 Manual Execution From TS3</a></li>
+<li><a href="#tc14-manual-execution-from-ts3">TC14 Manual Execution From TS3</a></li>
+<li><a href="#tc15-manual-execution-from-ts3">TC15 Manual Execution From TS3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#evaluation">Evaluation</a><ul>
+<li><a href="#frontend-reports">Frontend Reports</a></li>
+<li><a href="#backend-reports">Backend Reports</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="testing-tools-used">Testing tools used</h1>
+<ul>
+<li>Vitest (For Automated Frontend Functional Testing)</li>
+<li>Lighthouse (For Automated Frontend Nonfunction Testing)</li>
+<li>Postman (For Manual Backend Functional Testing)</li>
 </ul>
 <h1 id="software-testing-phases">Software Testing Phases</h1>
-<h2 id="1-design">1. Design</h2>
+<h2 id="design">Design</h2>
 <p>In this phase we will design test cases.</p>
 <h3 id="1-human-based">1. Human Based</h3>
+<ol>
+<li>Test AR Adventure Experience</li>
+</ol>
 <h3 id="2-criteria-based">2. Criteria Based</h3>
 <h4 id="test-criterion-rules">Test Criterion (Rules)</h4>
 <ol>
@@ -889,38 +891,49 @@
 </ol>
 <h4 id="test-requirements">Test Requirements</h4>
 <ol>
-<li>Test Register funcionalities</li>
-<li>Test Login funcionalities</li>
-<li>Test Items functionalities</li>
-<li>Test Home UI Components</li>
+<li>Test Register funcionalities (DONE)</li>
+<li>Test Login funcionalities (DONE)</li>
+<li>Test Items functionalities (NOT IMPLEMENTED)</li>
+<li>Test Home UI Components (NOT IMPLEMENTED)</li>
+<li>Test Create Tool UI Components (NOT IMPLEMENTED)</li>
+<li>Test Search Tools UI Components (NOT IMPLEMENTED)</li>
+<li>Test Product UI Components (NOT IMPLEMENTED)</li>
+<li>Test About Us UI Components (NOT IMPLEMENTED)</li>
 <li>Other Test Requirements is assigned as "LATER".</li>
 </ol>
 <h4 id="coverage-criteria">Coverage Criteria</h4>
 <ol>
-<li>For ISP Coverage: We will choose ACoC (All Combinations) Coverage Criteria, since we want to ensure minimal test cases with maximum benifit.</li>
+<li>For ISP Coverage: We will choose BCC (Base Choice) Coverage Criteria, since we want to ensure minimal test cases with maximum benifit.</li>
 <li>For Graph Coverage: We will choose CPC (Complete Path) Coverage Criteria, since we plan to use it in integration between frontend and backend.</li>
 <li>For Logic Coverage: We will choose PC (Predicate) Coverage Criteria, since we only want to use it in validation statements.</li>
-<li>For Syntantic Coverage: We will not cover this coverage section since it is not included in the course.</li>
+<li>For Syntantic Coverage: We will choose to use this coverage in HTML and CSS Components</li>
 </ol>
 <h4 id="functional">Functional</h4>
+<p><a href="https://docs.google.com/spreadsheets/d/1PXeD7YKlPjDotzDKKR61ubJKgNtq_t0Pj6YmkRVE04s/edit#gid=0">Excel Document</a></p>
 <ul>
-<li><strong>Unit Testing</strong> Test Set (TS1): Using <strong>Input Domain Coverage</strong> 
-<img alt="TS1 Image" src="../../assets/testing/TS1.png" /><ol>
-<li>(TC1): Ensure Email and Password are Valid, and the Button is clicked</li>
-<li>(TC2): Ensure Email is invalid and Password is Valid, and the Button is clicked</li>
-<li>(TC3): Ensure Email is empty and Password is Valid, and the Button is clicked</li>
-<li>(TC4): Ensure Email is valid and Password is invalid, and the Button is clicked</li>
-<li>(TC5): Ensure Email is valid and Password is empty, and the Button is clicked</li>
-<li>(TC6): Ensure Email is valid and Password is valid, and the Button is not clicked</li>
-</ol>
+<li>
+<p><strong>Unit Testing</strong> Test Set (TS1): Using <strong>Input Domain Coverage</strong>
+  <img alt="TS1 Image" src="../../assets/testing/TS1.png" /></p>
 </li>
-<li><strong>Integration Testing</strong> Test Set (TS2): Using <strong>Logic Coverage</strong><ol>
-<li>(TC7): Ensure sending email and password as a string and user does not exist. User should be registered</li>
-<li>(TC8): Ensure sending email and password as not a string and user exists. User should not be registered</li>
-<li>(TC9): Ensure sending email and password as a string and user exists. User should login</li>
-<li>(TC10): Ensure sending email and password as not a string andand user does not exist. User should not login</li>
-</ol>
+<li>
+<p><strong>(TC1)</strong>: Ensure Email and Password are Valid, and the Button is clicked</p>
 </li>
+<li><strong>(TC2)</strong>: Ensure Email is invalid and Password is Valid, and the Button is clicked</li>
+<li><strong>(TC3)</strong>: Ensure Email is empty and Password is Valid, and the Button is clicked</li>
+<li><strong>(TC4)</strong>: Ensure Email is valid and Password is invalid, and the Button is clicked</li>
+<li><strong>(TC5)</strong>: Ensure Email is valid and Password is empty, and the Button is clicked</li>
+<li>
+<p><strong>(TC6)</strong>: Ensure Email is valid and Password is valid, and the Button is not clicked</p>
+</li>
+<li>
+<p><strong>Integration Testing</strong> Test Set (TS2): Using <strong>Logic Coverage</strong></p>
+</li>
+<li>
+<p><strong>(TC7)</strong>: Ensure sending email and password as a string and user does not exist. User should be registered</p>
+</li>
+<li><strong>(TC8)</strong>: Ensure sending email and password as not a string and user exists. User should not be registered</li>
+<li><strong>(TC9)</strong>: Ensure sending email and password as a string and user exists. User should login</li>
+<li><strong>(TC10)</strong>: Ensure sending email and password as not a string and user does not exist. User should not login</li>
 </ul>
 <pre><code>  Predicate 1 (P1): Email is a string
   Predicate 2 (P2): Password is a string
@@ -934,22 +947,22 @@
   Login False Expression: (not P1 or not P2) and (P3)
 </code></pre>
 <ul>
-<li><strong>System Testing</strong> Test Set (TS3): Using <strong>Graph Coverage</strong>
-<img alt="TS3 Image" src="../../assets/testing/TS3.png" /><ol>
-<li>(TC11): Path(1,2,7)</li>
-<li>(TC12): Path(1,2,3,7)</li>
-<li>(TC13): Path(1,2,3,4,7)</li>
-<li>(TC14): Path(1,2,3,4,5,7)</li>
-<li>(TC15): Path(1,2,3,4,5,6)</li>
-</ol>
+<li>
+<p><strong>System Testing</strong> Test Set (TS3): Using <strong>Graph Coverage</strong>
+  <img alt="TS3 Image" src="../../assets/testing/TS3.png" /></p>
 </li>
+<li>
+<p><strong>(TC11)</strong>: Path(1,2,7)</p>
+</li>
+<li><strong>(TC12)</strong>: Path(1,2,3,7)</li>
+<li><strong>(TC13)</strong>: Path(1,2,3,4,7)</li>
+<li><strong>(TC14)</strong>: Path(1,2,3,4,5,7)</li>
+<li><strong>(TC15)</strong>: Path(1,2,3,4,5,6)</li>
 </ul>
 <h4 id="non-functional">Non Functional</h4>
-<blockquote>
-<p>TODO</p>
-</blockquote>
 <ul>
-<li><strong>Performance Testing</strong> Test Set (TSx): Using <strong>Logic Coverage</strong></li>
+<li><strong>Performance Testing</strong> Test Set (TS16): Using <strong>Logic Coverage</strong>
+  <img alt="Performance Testing" src="../../assets/testing/performance-test.png" /></li>
 <li><strong>Availability Testing</strong> Test Set (TSx): Using <strong>Logic Coverage</strong></li>
 <li><strong>Security Testing</strong> Test Set (TSx): Using <strong>Graph Coverage</strong></li>
 </ul>
@@ -957,18 +970,135 @@
 <h4 id="tc1-from-ts1">TC1 From TS1</h4>
 <p><img alt="TC1 Image" src="../../assets/testing/TC1.png" /></p>
 <h4 id="tc2-from-ts1">TC2 From TS1</h4>
-<h2 id="2-automation">2. Automation</h2>
+<p><img alt="TC2 Image" src="../../assets/testing/TC2.png" /></p>
+<h4 id="tc3-from-ts1">TC3 From TS1</h4>
+<p><img alt="TC3 Image" src="../../assets/testing/TC3.png" /></p>
+<h4 id="tc4-from-ts1">TC4 From TS1</h4>
+<p><img alt="TC4 Image" src="../../assets/testing/TC4.png" /></p>
+<h4 id="tc5-from-ts1">TC5 From TS1</h4>
+<p><img alt="TC5 Image" src="../../assets/testing/TC5.png" /></p>
+<h4 id="tc6-from-ts1">TC6 From TS1</h4>
+<p><img alt="TC6 Image" src="../../assets/testing/TC6.png" /></p>
+<h4 id="tc7-from-ts1">TC7 From TS1</h4>
+<p><img alt="TC7 Image" src="../../assets/testing/TC7.png" /></p>
+<h4 id="tc8-from-ts1">TC8 From TS1</h4>
+<p><img alt="TC8 Image" src="../../assets/testing/TC8.png" /></p>
+<h4 id="tc9-from-ts1">TC9 From TS1</h4>
+<p><img alt="TC9 Image" src="../../assets/testing/TC9.png" /></p>
+<h4 id="tc10-from-ts1">TC10 From TS1</h4>
+<p><img alt="TC10 Image" src="../../assets/testing/TC10.png" /></p>
+<h2 id="automation">Automation</h2>
 <h4 id="tc1-automation-from-ts1">TC1 Automation From TS1</h4>
-<pre><code class="language-js">  // sum.test.js
-  import { expect, test } from 'vitest'
-  import { sum } from './sum'
-
-  test('adds 1 + 2 to equal 3', () =&gt; {
-    expect(sum(1, 2)).toBe(3)
-  })
+<pre><code class="language-js">// Test Case 1
+test(&quot;(TC1) Ensure Email and Password are Valid, and the Button is clicked&quot;, async () =&gt; {
+  expect(
+    await register(
+      &quot;validUsername&quot;,
+      &quot;valid@example.com&quot;,
+      &quot;validPassword&quot;,
+      &quot;validCountry&quot;,
+      &quot;localhost:9090&quot;
+    )
+  ).toBe(&quot;Register Information is Ready To Send&quot;);
+});
 </code></pre>
-<h2 id="3-execution">3. Execution</h2>
-<h2 id="4-evaluation">4. Evaluation</h2>
+<h4 id="tc2-automation-from-ts1">TC2 Automation From TS1</h4>
+<pre><code class="language-js">// Test Case 2
+test(&quot;(TC2) Ensure Email is invalid and Password is Valid, and the Button is clicked&quot;, async () =&gt; {
+  expect(
+    await register(
+      &quot;validUsername&quot;,
+      &quot;invalidEmail&quot;,
+      &quot;validPassword&quot;,
+      &quot;validCountry&quot;
+    )
+  ).toBe(&quot;Invalid Email (missing '@')&quot;);
+});
+</code></pre>
+<h4 id="tc3-automation-from-ts1">TC3 Automation From TS1</h4>
+<pre><code class="language-js">// Test Case 3
+test(&quot;(TC3) Ensure Email is empty and Password is Valid, and the Button is clicked&quot;, async () =&gt; {
+  expect(
+    await register(&quot;validUsername&quot;, &quot;&quot;, &quot;validPassword&quot;, &quot;validCountry&quot;)
+  ).toBe(&quot;Empty Email&quot;);
+});
+</code></pre>
+<h4 id="tc4-automation-from-ts1">TC4 Automation From TS1</h4>
+<pre><code class="language-js">// Test Case 4
+test(&quot;(TC4) Ensure Email is valid and Password is invalid, and the Button is clicked&quot;, async () =&gt; {
+  expect(
+    await register(&quot;validUsername&quot;, &quot;valid@example.com&quot;, &quot;&quot;, &quot;validCountry&quot;)
+  ).toBe(&quot;Empty Password&quot;);
+});
+</code></pre>
+<h4 id="tc5-automation-from-ts1">TC5 Automation From TS1</h4>
+<pre><code class="language-js">// Test Case 5
+test(&quot;(TC5) Ensure Email is valid and Password is empty, and the Button is clicked&quot;, async () =&gt; {
+  expect(
+    await register(&quot;validUsername&quot;, &quot;valid@example.com&quot;, &quot;&quot;, &quot;validCountry&quot;)
+  ).toBe(&quot;Empty Password&quot;);
+});
+</code></pre>
+<h4 id="tc6-automation-from-ts1">TC6 Automation From TS1</h4>
+<pre><code class="language-js">// Test Case 6
+test(&quot;(TC6) Ensure Email is valid and Password is valid, and the Button is not clicked&quot;, () =&gt; {
+  return &quot;Nothing will happen&quot;;
+});
+</code></pre>
+<h4 id="tc7-automation-from-ts2">TC7 Automation From TS2</h4>
+<pre><code class="language-js">/* Integration Testing */
+// Test Case 7
+test(&quot;(TC7) Ensure sending email and password as a string and user does not exist. User should be registered&quot;, async () =&gt; {
+  expect(
+    await register(
+      &quot;nonexistentUser&quot;,
+      &quot;nonexistentUser@gmail.com1&quot;,
+      &quot;fakePassword&quot;,
+      &quot;fakeCountry&quot;
+    )
+  ).toBe(&quot;User registration successful&quot;);
+});
+</code></pre>
+<h4 id="tc8-automation-from-ts2">TC8 Automation From TS2</h4>
+<pre><code class="language-js">// Test Case 8
+test(&quot;(TC8) Ensure sending email and password as not a string and user exists. User should not be registered&quot;, async () =&gt; {
+  // Assuming there is an existing user with the given details
+  expect(await register(&quot;existingUser&quot;, 0, 0, &quot;fakeCountry&quot;)).toBe(
+    &quot;Please Enter String Password&quot;
+  );
+});
+</code></pre>
+<h4 id="tc9-automation-from-ts2">TC9 Automation From TS2</h4>
+<pre><code class="language-js">// Test Case 9
+test(&quot;(TC9) Ensure sending email and password as a string and user exists. User should login&quot;, async () =&gt; {
+  expect(await login(&quot;existingUser&quot;, &quot;fakePassword&quot;)).not.toBe(undefined); // access token Recieved (that means there is a user and it is logged in)
+});
+</code></pre>
+<h4 id="tc10-automation-from-ts2">TC10 Automation From TS2</h4>
+<pre><code class="language-js">// Test Case 10
+test(&quot;(TC10) Ensure sending email and password as not a string and user does not exist. User should not login&quot;, async () =&gt; {
+  expect(await login(0, 0)).toBe(&quot;Please Enter String Password&quot;);
+});
+</code></pre>
+<h2 id="execution">Execution</h2>
+<h3 id="automatic">Automatic</h3>
+<h4 id="frontend">Frontend</h4>
+<h5 id="running-vitest-for-all-ts1-and-ts2">Running Vitest for All TS1 and TS2</h5>
+<p><img alt="Testing Execution Image" src="../../assets/testing/test-execution.png" /></p>
+<h3 id="manual">Manual</h3>
+<h4 id="backend">Backend</h4>
+<h5 id="tc12-manual-execution-from-ts3">TC12 Manual Execution From TS3</h5>
+<h5 id="tc13-manual-execution-from-ts3">TC13 Manual Execution From TS3</h5>
+<p><img alt="TC15" src="../../assets/testing/TC13.jpeg" /></p>
+<h5 id="tc14-manual-execution-from-ts3">TC14 Manual Execution From TS3</h5>
+<h5 id="tc15-manual-execution-from-ts3">TC15 Manual Execution From TS3</h5>
+<p><img alt="TC15" src="../../assets/testing/TC15.jpeg" /></p>
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="frontend-reports">Frontend Reports</h3>
+<p><img alt="Tests Pass" src="../../assets/testing/all-tests-pass.png" />
+<img alt="Tests graph" src="../../assets/testing/all-tests-graph.png" />
+<img alt="Tests code" src="../../assets/testing/all-tests-code.png" /></p>
+<h3 id="backend-reports">Backend Reports</h3>
 
 
 

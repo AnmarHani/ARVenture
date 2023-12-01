@@ -31,6 +31,7 @@ nav:
     - Execution Phase: "execution/index.md"
     - Controlling Phase: "index.md"
     - Closing Phase: "index.md"
+    
   - "Execution Phases (Software Process Activities)":
     - Home: execution/index.md
     - Requirements Specification Activity: execution/specification.md
@@ -40,8 +41,7 @@ nav:
     - Testing (V&V) Activity:
       - Validation: execution/testing.md
       - Verification: index.md
-    - Evolution Activity:
-      - Home: index.md
+    - Evolution Activity: execution/evolution.md
 
 site_dir: docs
 docs_dir: dev-docs

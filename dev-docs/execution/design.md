@@ -13,6 +13,8 @@
       - [Prototype View](#prototype-view)
       - [Editor View](#editor-view)
     - [Home Page](#home-page)
+    - [Login Page](#login-page)
+    - [Signup Page](#signup-page)
     - [About Us Page](#about-us-page)
     - [Product Page Page](#product-page-page)
     - [ARVote Create Page](#arvote-create-page)
@@ -47,22 +49,30 @@ You Can Edit the design from this [Link](https://www.figma.com/file/ckDjkDlhqG1S
 
 ### Home Page
 
-![Page](../assets/design/LandingPage.png)
+![Image](../assets/implementation/home1.png)
+
+### Login Page
+
+![Image](../assets/implementation/login1.png)
+
+### Signup Page
+
+![Image](../assets/implementation/login1.png)
 
 ### About Us Page
 
-![Page](../assets/design/AboutUs.png)
+![Image](../assets/implementation/about1.png)
 
 ### Product Page Page
 
-![Page](../assets/design/ProductPage.png)
+![Image](../assets/implementation/product1.png)
 
 ### ARVote Create Page
 
-![Page](../assets/design/ARVoteSearchPage.png)
+![Image](../assets/implementation/create-tool1.png)
 
 ### ARVote Search Page
 
-![Page](../assets/design/ToolSearchPage.png)
+![Image](../assets/implementation/tools1.png)
 
 ## ARVenture Mobile UI/UX Design

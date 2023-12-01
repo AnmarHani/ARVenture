@@ -64,7 +64,7 @@ Also, Github Repository [ARVenture Github Repo](https://github.com/AnmarHani/ARV
 # Live Examples
 
 - Frontend: [ARVenture Web](https://arventure.vercel.app/)
-- Backend: [ARVenture Backend](https://arventure-dev-hpnx.1.us-1.fl0.io)
+- Backend: [ARVenture Backend](https://arventure-dev-hpnx.1.us-1.fl0.io/docs)
 - Analysis Dashboard: [ARVenture Data Analysis Dashboard](https://arventure-imkyv9qx3qdtm5fj9tcbfe.streamlit.app/)
 - Docs: [ARVenture Docs](https://anmarhani.github.io/ARVenture/)
 
