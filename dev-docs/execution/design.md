@@ -7,9 +7,9 @@
   - [System Architecture (Client-Server Mostly)](#system-architecture-client-server-mostly)
   - [Database Design](#database-design)
   - [ARVenture Web UI/UX Design](#arventure-web-uiux-design)
-    - [Figma Design](#figma-design)
     - [UI/UX Principles](#uiux-principles)
       - [Atomic Design](#atomic-design)
+    - [Figma Design](#figma-design)
       - [Prototype View](#prototype-view)
       - [Editor View](#editor-view)
     - [Home Page](#home-page)
@@ -31,13 +31,17 @@
 
 ## ARVenture Web UI/UX Design
 
-### Figma Design
-
 ### UI/UX Principles
-In crafting this design, we adhered to the fundamental principles of Consistency, Hierarchy, and Contrast. These principles guided our decisions regarding color usage, component selection, and overall layout, ensuring a cohesive and user-friendly experience.
+
+In crafting this design, we adhered to the fundamental principles of **Consistency**, **Hierarchy**, and **Contrast**. These principles guided our decisions regarding color usage, component selection, and overall layout, ensuring a cohesive and user-friendly experience.
 
 #### Atomic Design
+
 We used the atomic design approach by building the pages by bottom up. This methodology gained inspiration from the world of natural science—Atoms are the basic building blocks of all matter meaning that two or more atoms combine to form molecules. Rather than designing collections of web pages, atomic design begins with the basic UI components known as atoms (buttons, menu items, etc.) and gradually builds the entire UI.
+
+![Atomic Design](../assets/design/Atomic%20Design.png)
+
+### Figma Design
 
 #### Prototype View
 
