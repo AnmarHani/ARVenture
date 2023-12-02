@@ -1,8 +1,8 @@
 <script>
-  import SubTitle from "../components/SubTitle.svelte";
+  import Title from "../components/Title.svelte";
 </script>
 
-<SubTitle>Our Team</SubTitle>
+<Title class="title">Our Team</Title>
 <section>
   <a href="https://anmarhani.vercel.app" target="_blank">
     <img src="/anmarhanipfp.jpeg" alt="" />
@@ -34,6 +34,8 @@
 </section>
 
 <style>
+
+
   section {
     display: flex;
     flex-direction: row;
@@ -53,11 +55,17 @@
     align-items: center;
     background: #1b1229;
     border-radius: 15px;
+      transition: all 0.5s ease;
   }
 
+  a:hover {
+    transform: scale(.9);
+    cursor: pointer;
+  }
   img {
     width: 15rem;
     height: 17rem;
     border-radius: 15px;
+    
   }
 </style>

@@ -5,7 +5,7 @@
   import Button from "../components/Button.svelte";
   import { onMount } from "svelte";
   let access_token;
-  
+
   onMount(() => {
     access_token = localStorage.getItem("access_token");
   });
@@ -13,8 +13,7 @@
   function deleteUser() {
     localStorage.clear();
     goto("/");
-    window.location.reload()
-
+    window.location.reload();
   }
 </script>
 

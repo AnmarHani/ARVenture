@@ -1,15 +1,12 @@
 <script>
-    export let Video;
+  export let Video;
 </script>
-<video src=""></video>
 
-
+<video src="" />
 
 <style>
-
-    video {
+  video {
     width: 40rem;
     border-radius: 25px;
   }
-  
 </style>

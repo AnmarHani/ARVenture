@@ -1,5 +1,5 @@
 <script>
-	import ProductSection from "../../templates/ProductSection.svelte";
+  import ProductSection from "../../templates/ProductSection.svelte";
 </script>
 
-<ProductSection/>
+<ProductSection />

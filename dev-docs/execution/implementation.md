@@ -160,15 +160,15 @@
 
 #### HTML Validation
 
-**Button** 
+**Button**
 
 ![Image](../assets/implementation/button.png)
 
-**Card** 
+**Card**
 
 ![Image](../assets/implementation/card.png)
 
-**Description** 
+**Description**
 ![Image](../assets/implementation/Description.png)
 
 **Dropdown**
@@ -202,9 +202,6 @@
 
 ![Image](../assets/implementation/video.png)
 
-
-
-
 ### Pages
 
 **Home page in Desktop**:
@@ -237,11 +234,11 @@
 
 **Sign up page in Tablet**:
 
-![Image](../assets/implementation/login1.png)
+![Image](../assets/implementation/login2.png)
 
 **Sign up page in Mobile**:
 
-![Image](../assets/implementation/login1.png)
+![Image](../assets/implementation/login3.png)
 
 **Product Page in Desktop**:
 
@@ -296,8 +293,6 @@
 #### Contact Us Endpoint Code Snippet
 
 ```py
-
-
 class Contact(BaseModel):
     firstName: str = Field(
         ...,
@@ -339,7 +334,6 @@ class Contact(BaseModel):
         description="Country should have 2-50 characters",
     )
 
-
 @app.post("/user/send_contact")
 def contact_user(contact: Contact):
     try:
@@ -362,7 +356,6 @@ def contact_user(contact: Contact):
         raise HTTPException(status_code=400, detail=str(validation_error))
     except mysql.connector.Error as error:
         return {"message": "Failed to send form", "error": str(error)}
-
 ```
 
 #### Endpoints

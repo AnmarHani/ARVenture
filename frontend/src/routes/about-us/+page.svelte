@@ -7,5 +7,4 @@
 <Team />
 
 <style>
-  
 </style>

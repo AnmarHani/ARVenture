@@ -39,8 +39,16 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     max-width: 100%;
+    transition: all 0.38s ease;
+
   }
 
+  img:hover {
+    transform: scale(.9);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+  }
   .button-container {
     display: flex;
     justify-content: center;

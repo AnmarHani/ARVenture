@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<footer>
+<footer role="contentinfo">
   <div class="contact">
     <h1>Contact us</h1>
     <div class="icons">
@@ -10,7 +10,6 @@
     </div>
   </div>
   <p>ARVenture &copy; 2023</p>
-
 </footer>
 
 <style>
@@ -24,7 +23,6 @@
     padding: 3rem;
     background: linear-gradient(90deg, #d10ed19a, #4aaef19a) padding-box;
   }
-
 
   a {
     color: #ffffff;
@@ -51,5 +49,4 @@
       gap: 2rem;
     }
   }
-
 </style>

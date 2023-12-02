@@ -1,6 +1,5 @@
 <script>
   export let component;
-
 </script>
 
 <h2 bind:this={component}>

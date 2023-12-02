@@ -5,7 +5,7 @@
 </script>
 
 <section>
-  <div>
+  <div role="article">
     <Title>Introducing ARventure</Title>
     <Description>
       Embark on an extraordinary journey with ARVenture, where reality meets
@@ -35,6 +35,13 @@
     max-width: 40rem;
     border-radius: 25px;
     margin-top: 1rem;
+    transition: all 0.38s ease;
+
+  }
+
+  video:hover {
+    transform: scale(0.9);
+    cursor: pointer;
   }
 
   @media (max-width: 1204px) {

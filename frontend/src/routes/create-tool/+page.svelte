@@ -1,5 +1,5 @@
 <script>
-	import CreateToolSection from "../../templates/CreateToolSection.svelte";
+  import CreateToolSection from "../../templates/CreateToolSection.svelte";
 </script>
 
-<CreateToolSection/>
+<CreateToolSection />

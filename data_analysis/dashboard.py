@@ -254,12 +254,12 @@ def main():
                 plt.ylabel("Percentage")
                 plt.tight_layout()
                 st.pyplot(plt)
+
             st.subheader("Country Distribution Visualization")
             query_countries = "SELECT DISTINCT country FROM contact"
             countries_df = fetch_data_mysql(query_countries)
             if not countries_df.empty:
                 plot_country_map(countries_df)
-
             else:
                 st.write("No data available for country visualization.")
 

@@ -64,7 +64,7 @@
     ]}
   />
 
-  <div class="error-message">
+  <div class="error-message" role="group">
     {#if result.error}
       <p>{result.error}</p>
     {/if}

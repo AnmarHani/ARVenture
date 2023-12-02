@@ -58,9 +58,8 @@
   }
 
   @media only screen and (max-width: 780px) {
-    form{
+    form {
       width: 70vw;
-
     }
   }
 </style>

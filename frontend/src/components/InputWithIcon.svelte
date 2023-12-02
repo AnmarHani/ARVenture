@@ -9,7 +9,7 @@
   export let min = 10;
 </script>
 
-<div>
+<div role="group" >
   {#if type === "text"}
     <input
       maxlength={max}

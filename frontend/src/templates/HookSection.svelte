@@ -35,6 +35,8 @@
     gap: 15px;
   }
 
+  
+
   @media (max-width: 768px) {
     section {
       flex-direction: column;

@@ -16,12 +16,8 @@
   </div>
   <div class="product-card">
     <div class="images">
-      <img src="/Logo.png" alt="Logo Image" width="100" />
-      <img
-        class="glasses-image"
-        src="/glassesremoved.png"
-        alt="Glasses Image"
-      />
+      <img src="/Logo.png" alt="Logo " width="100" />
+      <img class="glasses-image" src="/glassesremoved.png" alt="Glasses "/>
     </div>
     <article class="glasses-details">
       <SubTitle>ARVglasses</SubTitle>
@@ -58,9 +54,16 @@
   }
   .glasses-image {
     background: -webkit-linear-gradient(100deg, #4aaef1, #d10ed1);
-
     margin: 10px;
     border-radius: 15px;
+    transition: all 0.38s ease;
+  }
+
+  img:hover {
+    transform: scale(.9);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
   }
   .card-container {
     margin: 15px auto;
@@ -87,10 +90,6 @@
     max-width: 45%;
     margin: 0 auto;
   }
-  .p {
-    font-size: 10px;
-  }
-
   .stars {
     font-size: 20px;
     margin: 1px 0px 10px 0;
