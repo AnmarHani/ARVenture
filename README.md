@@ -40,26 +40,7 @@ Also, Github Repository [ARVenture Github Repo](https://github.com/AnmarHani/ARV
 - Ziyad Alghamdi | Backend Developer and Data Analyst.
 - Fawaz Khosifan | System Administrator and Penetration Tester and Security Specialist
 
-# Table of contents:
-
-- [ARVenture](#arventure)
-- [ARVenture Project Overview](#arventure-project-overview)
-- [Summary](#summary)
-  - [Credits](#credits)
-- [Table of contents:](#table-of-contents)
-- [Live Examples](#live-examples)
-- [How to Run Code Locally](#how-to-run-code-locally)
-    - [1. First, clone the repository or download the zip code into your local desktop.](#1-first-clone-the-repository-or-download-the-zip-code-into-your-local-desktop)
-  - [2a. Docker (RECOMMENDED)](#2a-docker-recommended)
-  - [2b. Manual](#2b-manual)
-  - [1. Requirements Specification](#1-requirements-specification)
-  - [2. Design](#2-design)
-  - [3. Implementation](#3-implementation)
-    - [ARV Frontend Web Technologies:](#arv-frontend-web-technologies)
-    - [ARV API Backend Technologies:](#arv-api-backend-technologies)
-    - [Analysis Dashboard Technologies:](#analysis-dashboard-technologies)
-  - [4. Verification and Validation](#4-verification-and-validation)
-  - [5. Deployment and Evolution and Maintenance](#5-deployment-and-evolution-and-maintenance)
+[Ziyad Cert.pdf](https://github.com/AnmarHani/ARVenture/files/13539776/Ziyad.Cert.pdf)
 
 # Live Examples
 
