@@ -26,16 +26,16 @@
       - [TC9 From TS1](#tc9-from-ts1)
       - [TC10 From TS1](#tc10-from-ts1)
   - [Automation](#automation)
-      - [TC1 Automation From TS1](#tc1-automation-from-ts1)
-      - [TC2 Automation From TS1](#tc2-automation-from-ts1)
-      - [TC3 Automation From TS1](#tc3-automation-from-ts1)
-      - [TC4 Automation From TS1](#tc4-automation-from-ts1)
-      - [TC5 Automation From TS1](#tc5-automation-from-ts1)
-      - [TC6 Automation From TS1](#tc6-automation-from-ts1)
-      - [TC7 Automation From TS2](#tc7-automation-from-ts2)
-      - [TC8 Automation From TS2](#tc8-automation-from-ts2)
-      - [TC9 Automation From TS2](#tc9-automation-from-ts2)
-      - [TC10 Automation From TS2](#tc10-automation-from-ts2)
+    - [TC1 Automation From TS1](#tc1-automation-from-ts1)
+    - [TC2 Automation From TS1](#tc2-automation-from-ts1)
+    - [TC3 Automation From TS1](#tc3-automation-from-ts1)
+    - [TC4 Automation From TS1](#tc4-automation-from-ts1)
+    - [TC5 Automation From TS1](#tc5-automation-from-ts1)
+    - [TC6 Automation From TS1](#tc6-automation-from-ts1)
+    - [TC7 Automation From TS2](#tc7-automation-from-ts2)
+    - [TC8 Automation From TS2](#tc8-automation-from-ts2)
+    - [TC9 Automation From TS2](#tc9-automation-from-ts2)
+    - [TC10 Automation From TS2](#tc10-automation-from-ts2)
   - [Execution](#execution)
     - [Automatic](#automatic)
       - [Frontend](#frontend)
@@ -51,6 +51,7 @@
     - [Backend Reports](#backend-reports)
 
 # Testing tools used
+
 - Vitest (For Automated Frontend Functional Testing)
 - Lighthouse (For Automated Frontend Nonfunction Testing)
 - Postman (For Manual Backend Functional Testing)
@@ -74,14 +75,14 @@ In this phase we will design test cases.
 
 #### Test Requirements
 
-1. Test Register funcionalities (DONE)
-2. Test Login funcionalities (DONE)
-3. Test Items functionalities (NOT IMPLEMENTED)
-4. Test Home UI Components (NOT IMPLEMENTED)
-5. Test Create Tool UI Components (NOT IMPLEMENTED)
-6. Test Search Tools UI Components (NOT IMPLEMENTED)
-7. Test Product UI Components (NOT IMPLEMENTED)
-8. Test About Us UI Components (NOT IMPLEMENTED)
+1. Test Register funcionalities (DONE).
+2. Test Login funcionalities (DONE).
+3. Test Items functionalities (NOT IMPLEMENTED).
+4. Test Home UI Components (NOT IMPLEMENTED).
+5. Test Create Tool UI Components (NOT IMPLEMENTED).
+6. Test Search Tools UI Components (NOT IMPLEMENTED).
+7. Test Product UI Components (NOT IMPLEMENTED).
+8. Test About Us UI Components (NOT IMPLEMENTED).
 9. Other Test Requirements is assigned as "LATER".
 
 #### Coverage Criteria
@@ -89,7 +90,7 @@ In this phase we will design test cases.
 1. For ISP Coverage: We will choose BCC (Base Choice) Coverage Criteria, since we want to ensure minimal test cases with maximum benifit.
 2. For Graph Coverage: We will choose CPC (Complete Path) Coverage Criteria, since we plan to use it in integration between frontend and backend.
 3. For Logic Coverage: We will choose PC (Predicate) Coverage Criteria, since we only want to use it in validation statements.
-4. For Syntantic Coverage: We will choose to use this coverage in HTML and CSS Components
+4. For Syntantic Coverage: We will choose to use this coverage in HTML and CSS Components.
 
 #### Functional
 
@@ -196,7 +197,7 @@ test("(TC1) Ensure Email and Password are Valid, and the Button is clicked", asy
       "valid@example.com",
       "validPassword",
       "validCountry",
-      "localhost:9090"
+      "localhost:9090" // Fake Backend URL (To Unit Test)
     )
   ).toBe("Register Information is Ready To Send");
 });
@@ -235,8 +236,8 @@ test("(TC3) Ensure Email is empty and Password is Valid, and the Button is click
 // Test Case 4
 test("(TC4) Ensure Email is valid and Password is invalid, and the Button is clicked", async () => {
   expect(
-    await register("validUsername", "valid@example.com", "", "validCountry")
-  ).toBe("Empty Password");
+    await register("validUsername", "valid@example.com", "123", "validCountry")
+  ).toBe("Invalid Password (less than 4 characters)");
 });
 ```
 
@@ -324,12 +325,15 @@ test("(TC10) Ensure sending email and password as not a string and user does not
 ##### TC12 Manual Execution From TS3
 
 ##### TC13 Manual Execution From TS3
+
 ![TC15](../assets/testing/TC13.jpeg)
 
 ##### TC14 Manual Execution From TS3
 
 ##### TC15 Manual Execution From TS3
+
 ![TC15](../assets/testing/TC15.jpeg)
+
 ## Evaluation
 
 ### Frontend Reports

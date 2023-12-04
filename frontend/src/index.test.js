@@ -39,8 +39,8 @@ test("(TC3) Ensure Email is empty and Password is Valid, and the Button is click
 // Test Case 4
 test("(TC4) Ensure Email is valid and Password is invalid, and the Button is clicked", async () => {
   expect(
-    await register("validUsername", "valid@example.com", "", "validCountry")
-  ).toBe("Empty Password");
+    await register("validUsername", "valid@example.com", "123", "validCountry")
+  ).toBe("Invalid Password (less than 4 characters)");
 });
 
 // Test Case 5

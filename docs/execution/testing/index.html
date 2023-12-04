@@ -891,14 +891,14 @@
 </ol>
 <h4 id="test-requirements">Test Requirements</h4>
 <ol>
-<li>Test Register funcionalities (DONE)</li>
-<li>Test Login funcionalities (DONE)</li>
-<li>Test Items functionalities (NOT IMPLEMENTED)</li>
-<li>Test Home UI Components (NOT IMPLEMENTED)</li>
-<li>Test Create Tool UI Components (NOT IMPLEMENTED)</li>
-<li>Test Search Tools UI Components (NOT IMPLEMENTED)</li>
-<li>Test Product UI Components (NOT IMPLEMENTED)</li>
-<li>Test About Us UI Components (NOT IMPLEMENTED)</li>
+<li>Test Register funcionalities (DONE).</li>
+<li>Test Login funcionalities (DONE).</li>
+<li>Test Items functionalities (NOT IMPLEMENTED).</li>
+<li>Test Home UI Components (NOT IMPLEMENTED).</li>
+<li>Test Create Tool UI Components (NOT IMPLEMENTED).</li>
+<li>Test Search Tools UI Components (NOT IMPLEMENTED).</li>
+<li>Test Product UI Components (NOT IMPLEMENTED).</li>
+<li>Test About Us UI Components (NOT IMPLEMENTED).</li>
 <li>Other Test Requirements is assigned as "LATER".</li>
 </ol>
 <h4 id="coverage-criteria">Coverage Criteria</h4>
@@ -906,7 +906,7 @@
 <li>For ISP Coverage: We will choose BCC (Base Choice) Coverage Criteria, since we want to ensure minimal test cases with maximum benifit.</li>
 <li>For Graph Coverage: We will choose CPC (Complete Path) Coverage Criteria, since we plan to use it in integration between frontend and backend.</li>
 <li>For Logic Coverage: We will choose PC (Predicate) Coverage Criteria, since we only want to use it in validation statements.</li>
-<li>For Syntantic Coverage: We will choose to use this coverage in HTML and CSS Components</li>
+<li>For Syntantic Coverage: We will choose to use this coverage in HTML and CSS Components.</li>
 </ol>
 <h4 id="functional">Functional</h4>
 <p><a href="https://docs.google.com/spreadsheets/d/1PXeD7YKlPjDotzDKKR61ubJKgNtq_t0Pj6YmkRVE04s/edit#gid=0">Excel Document</a></p>
@@ -997,7 +997,7 @@ test(&quot;(TC1) Ensure Email and Password are Valid, and the Button is clicked&
       &quot;valid@example.com&quot;,
       &quot;validPassword&quot;,
       &quot;validCountry&quot;,
-      &quot;localhost:9090&quot;
+      &quot;localhost:9090&quot; // Fake Backend URL (To Unit Test)
     )
   ).toBe(&quot;Register Information is Ready To Send&quot;);
 });
@@ -1027,8 +1027,8 @@ test(&quot;(TC3) Ensure Email is empty and Password is Valid, and the Button is 
 <pre><code class="language-js">// Test Case 4
 test(&quot;(TC4) Ensure Email is valid and Password is invalid, and the Button is clicked&quot;, async () =&gt; {
   expect(
-    await register(&quot;validUsername&quot;, &quot;valid@example.com&quot;, &quot;&quot;, &quot;validCountry&quot;)
-  ).toBe(&quot;Empty Password&quot;);
+    await register(&quot;validUsername&quot;, &quot;valid@example.com&quot;, &quot;123&quot;, &quot;validCountry&quot;)
+  ).toBe(&quot;Invalid Password (less than 4 characters)&quot;);
 });
 </code></pre>
 <h4 id="tc5-automation-from-ts1">TC5 Automation From TS1</h4>

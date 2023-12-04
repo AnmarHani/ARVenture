@@ -1248,11 +1248,11 @@
 &lt;/style&gt;
 </code></pre>
 <h4 id="html-validation">HTML Validation</h4>
-<p><strong>Button</strong> </p>
+<p><strong>Button</strong></p>
 <p><img alt="Image" src="../../assets/implementation/button.png" /></p>
-<p><strong>Card</strong> </p>
+<p><strong>Card</strong></p>
 <p><img alt="Image" src="../../assets/implementation/card.png" /></p>
-<p><strong>Description</strong> 
+<p><strong>Description</strong>
 <img alt="Image" src="../../assets/implementation/Description.png" /></p>
 <p><strong>Dropdown</strong>
 <img alt="Image" src="../../assets/implementation/dropdown.png" /></p>
@@ -1286,9 +1286,9 @@
 <p><strong>Sign up page in Desktop</strong>:</p>
 <p><img alt="Image" src="../../assets/implementation/login1.png" /></p>
 <p><strong>Sign up page in Tablet</strong>:</p>
-<p><img alt="Image" src="../../assets/implementation/login1.png" /></p>
+<p><img alt="Image" src="../../assets/implementation/login2.png" /></p>
 <p><strong>Sign up page in Mobile</strong>:</p>
-<p><img alt="Image" src="../../assets/implementation/login1.png" /></p>
+<p><img alt="Image" src="../../assets/implementation/login3.png" /></p>
 <p><strong>Product Page in Desktop</strong>:</p>
 <p><img alt="Image" src="../../assets/implementation/product1.png" /></p>
 <p><strong>Product Page in Tablet</strong>:</p>
@@ -1315,9 +1315,7 @@
 <p><img alt="Image" src="../../assets/implementation/about3.png" /></p>
 <h3 id="backend-api">Backend (API)</h3>
 <h4 id="contact-us-endpoint-code-snippet">Contact Us Endpoint Code Snippet</h4>
-<pre><code class="language-py">
-
-class Contact(BaseModel):
+<pre><code class="language-py">class Contact(BaseModel):
     firstName: str = Field(
         ...,
         min_length=3,
@@ -1358,7 +1356,6 @@ class Contact(BaseModel):
         description=&quot;Country should have 2-50 characters&quot;,
     )
 
-
 @app.post(&quot;/user/send_contact&quot;)
 def contact_user(contact: Contact):
     try:
@@ -1381,7 +1378,6 @@ def contact_user(contact: Contact):
         raise HTTPException(status_code=400, detail=str(validation_error))
     except mysql.connector.Error as error:
         return {&quot;message&quot;: &quot;Failed to send form&quot;, &quot;error&quot;: str(error)}
-
 </code></pre>
 <h4 id="endpoints">Endpoints</h4>
 <p><strong>Register Endpoint:</strong></p>
